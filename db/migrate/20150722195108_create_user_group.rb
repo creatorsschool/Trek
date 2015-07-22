@@ -3,5 +3,6 @@ class CreateUserGroup < ActiveRecord::Migration
   	create_table :user_group do |t|
   		t.string :group_id
   		t.string :user_id
+  	end
   end
 end

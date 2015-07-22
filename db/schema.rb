@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722193931) do
+ActiveRecord::Schema.define(version: 20150722195108) do
 
   create_table "group", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20150722193931) do
     t.string  "field"
     t.boolean "status"
     t.string  "user_id"
+  end
+
+  create_table "user_group", force: :cascade do |t|
+    t.string "group_id"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
