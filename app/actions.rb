@@ -43,6 +43,7 @@ get '/group/:id/remove' do
 end
 
 get "/group/new" do
+	@users = User.all
 	erb :"/groups/group_form-create"
 end
 
@@ -66,4 +67,22 @@ post '/task/create/:user_id' do
 		user_id: params[:user_id]
 		})
 	redirect '/'
+end
+
+get '/task/:id/remove' do
+	Task.destroy(params[:id])
+	redirect '/'
+end
+
+get '/task/:task_id/edit' do
+	@task = Task.find(params[:task_id])
+	erb :"/tasks/edit_task"
+end
+
+post '/task/:task_id/update/:user_id' do
+	Task.update(params[:task_id],
+		field: params[:field],
+		user_id: params[:user_id]
+		)
+	redirect "/"
 end
