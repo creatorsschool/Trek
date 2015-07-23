@@ -1,2 +1,2 @@
-class instante_message < ActiveRecord::Base
+class Instantemessage < ActiveRecord::Base
 end

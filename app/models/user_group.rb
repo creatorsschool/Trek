@@ -1,2 +1,2 @@
-class User_group < ActiveRecord::Base
+class Usergroup < ActiveRecord::Base
 end
