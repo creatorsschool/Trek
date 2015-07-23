@@ -6,6 +6,10 @@ get "/" do
 end
 
 #.....................................User................................................
+get '/' do
+	erb :teste
+end
+
 get '/user/:id/remove' do
 	User.destroy(params[:id])
 	redirect '/'
@@ -22,6 +26,19 @@ post "/user/create" do
 		email: params[:email],
 		})
 	redirect "/"
+end
+
+get '/group/:id' do
+	@group = Group.find(params[:id])
+	@users = @group.users
+	erb :"group/show"
+end
+
+post '/group/:id/edit' do
+	@group = Group.find do |group|
+		group.id == params[:id].to_i
+	end
+	redirect '/group/#{group_id}'
 end
 
 get '/users/:id' do
@@ -56,9 +73,26 @@ post '/group/create' do
 end
 
 #..........................Task.........................................
-
 get "/task/new" do
 	erb :"/tasks/task_form-create"
+
+get '/group/:id' do
+	@group = Group.find(params[:id])
+	@users = @group.users
+	erb :"group/show"
+end
+
+post '/group/:id/edit' do
+	@group = Group.find do |group|
+		group.id == params[:id].to_i
+	end
+	redirect '/group/#{group_id}'
+end
+
+get '/users/:id' do
+    @user = User.find do |user|
+        user.id == params[:id].to_i
+    end
 end
 
 post '/task/create/:user_id' do
