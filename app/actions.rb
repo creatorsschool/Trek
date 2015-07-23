@@ -1,5 +1,6 @@
 get "/" do
 	@users = User.all
+	@groups = Group.all
 	erb :index
 end
 
@@ -13,12 +14,17 @@ get '/group/:id/remove' do
 	redirect '/'
 end
 
+get "/group/new" do
+	erb :"/groups/group_form-create"
+end
+
 post '/group/create' do
 	Group.create({
 		name: params[:name],
 		description: params[:description],
 		})
 	redirect '/'
+end
 
 get "/user/new" do
 	erb :"/users/user_form-create"

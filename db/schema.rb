@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722195108) do
+ActiveRecord::Schema.define(version: 20150723112413) do
 
-  create_table "group", force: :cascade do |t|
+  create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "user"
   end
 
-  create_table "instante_message", force: :cascade do |t|
+  create_table "instante_messages", force: :cascade do |t|
     t.string   "text"
     t.string   "user_id_sent"
     t.string   "user_id_received"
@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 20150722195108) do
     t.datetime "time"
   end
 
-  create_table "task", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string  "field"
     t.boolean "status"
     t.string  "user_id"
   end
 
-  create_table "user_group", force: :cascade do |t|
+  create_table "user_groups", force: :cascade do |t|
     t.string "group_id"
     t.string "user_id"
   end
