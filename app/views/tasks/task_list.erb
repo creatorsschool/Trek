@@ -1,0 +1,10 @@
+<div class="container-list-tasks">
+	<h3> List all Tasks </h3>
+	<ul class="list-tasks">
+		<% @tasks.each do |task| %>
+			<li>
+				<%= task.field %>
+			</li>
+		<% end %>
+	</ul>
+</div>
