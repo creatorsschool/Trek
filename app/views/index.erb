@@ -1,21 +1,16 @@
 <h1>Home Page</h1>
 
-
-
-
-
-
-
 <form action="/group/create" method="post">
 		<input type="text" name="name" placeholder="Insert your name here">
 		<input type="text" name="description" placeholder="Insert description here">
 		<button type="submit">Create group</button>
 </form>
 
-
-
-
-
-
 <a href="/user/<%= user.id %>/remove"><button>Remove user</button></a>
 <a href="/group/<%= group.id %>/remove"><button>Remove group</button></a>
+
+<div class="new_user">
+	<a href='/user/new'>New User</a>
+</div>
+
+<%= erb :user_list %>
