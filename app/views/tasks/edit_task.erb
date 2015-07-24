@@ -1,0 +1,15 @@
+<div class="form-edit_task">
+	<h3>Create task</h3>
+	<!-- o user_id tem de ser passado dependendo do login do user -->
+	<form action="/task/<%=@task.id%>/update/1" method='post'>
+		<div>
+			<label for='field'>Field</label>
+		</div>
+		<div>
+			<input name='field' type="text">
+		</div>
+		<div>
+			<button type='submit'>update task</button>
+		</div>
+	</form>
+</div>

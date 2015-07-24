@@ -3,6 +3,14 @@
 	<form action="/group/create" method="post">
 		<input type="text" name="name" placeholder="Insert your name here">
 		<input type="text" name="description" placeholder="Insert description here">
+		<select>
+			<option>Elements</option>
+			<% @users.each do |user| %>
+			<option>
+				<%= user.first_name %>
+			</option>
+			<%end%>
+		</select>
 		<button type="submit">Create group</button>
 	</form>
 </div>
