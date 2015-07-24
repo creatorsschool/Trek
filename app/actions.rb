@@ -75,6 +75,7 @@ end
 #..........................Task.........................................
 get "/task/new" do
 	erb :"/tasks/task_form-create"
+end 
 
 get '/group/:id' do
 	@group = Group.find(params[:id])
