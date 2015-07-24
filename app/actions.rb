@@ -1,6 +1,7 @@
 
 get '/' do
 	erb :"/login/login"
+end
 
 get "/" do
 	@users = User.all
