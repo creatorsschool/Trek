@@ -5,16 +5,7 @@ get "/" do
 	erb :index
 end
 
-#.....................................User................................................
-get '/' do
-	erb :teste
-end
-
-get '/user/:id/remove' do
-	User.destroy(params[:id])
-	redirect '/'
-end
-
+# => User
 get "/user/new" do
 	erb :"/users/user_form-create"
 end
@@ -28,37 +19,23 @@ post "/user/create" do
 	redirect "/"
 end
 
-get '/group/:id' do
-	@group = Group.find(params[:id])
-	@users = @group.users
-	erb :"group/show"
-end
-
-post '/group/:id/edit' do
-	@group = Group.find do |group|
-		group.id == params[:id].to_i
-	end
-	redirect '/group/#{group_id}'
-end
-
-get '/users/:id' do
+get '/user/:id' do
     @user = User.find do |user|
         user.id == params[:id].to_i
     end
 end
 
-post '/users/:id/update' do
+post '/user/:id/update' do
     User.update(params[:id], first_name: paramas[:first_name], last_name: params[:last_name], email: params[:email])
     redirect '/users/#{user_id}'
 end
 
-#----------------------------Group............................................
-
-get '/group/:id/remove' do
-	Group.destroy(params[:id])
+get '/user/:id/remove' do
+	User.destroy(params[:id])
 	redirect '/'
 end
 
+# => Group
 get "/group/new" do
 	@users = User.all
 	erb :"/groups/group_form-create"
@@ -72,11 +49,6 @@ post '/group/create' do
 	redirect '/'
 end
 
-#..........................Task.........................................
-get "/task/new" do
-	erb :"/tasks/task_form-create"
-end 
-
 get '/group/:id' do
 	@group = Group.find(params[:id])
 	@users = @group.users
@@ -90,10 +62,14 @@ post '/group/:id/edit' do
 	redirect '/group/#{group_id}'
 end
 
-get '/users/:id' do
-    @user = User.find do |user|
-        user.id == params[:id].to_i
-    end
+get '/group/:id/remove' do
+	Group.destroy(params[:id])
+	redirect '/'
+end
+
+# => Task
+get "/task/new" do
+	erb :"/tasks/task_form-create"
 end
 
 post '/task/create/:user_id' do
@@ -101,11 +77,6 @@ post '/task/create/:user_id' do
 		field: params[:field],
 		user_id: params[:user_id]
 		})
-	redirect '/'
-end
-
-get '/task/:id/remove' do
-	Task.destroy(params[:id])
 	redirect '/'
 end
 
@@ -120,4 +91,9 @@ post '/task/:task_id/update/:user_id' do
 		user_id: params[:user_id]
 		)
 	redirect "/"
+end
+
+get '/task/:id/remove' do
+	Task.destroy(params[:id])
+	redirect '/'
 end
