@@ -1,3 +1,7 @@
+get '/' do
+	erb :"/login/login"
+end
+
 get '/user/:id/remove' do
 	User.destroy(params[:id])
 	redirect '/'
