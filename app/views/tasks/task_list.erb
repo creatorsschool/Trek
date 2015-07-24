@@ -1,0 +1,12 @@
+<div class="container-list-tasks">
+	<h3> List all Tasks </h3>
+	<ul class="list-tasks">
+		<% @tasks.each do |task| %>
+			<li>
+				<%= task.field %>
+				<a href='/task/<%=task.id%>/remove'>Remove</a>
+				<a href='/task/<%=task.id%>/edit'>Edit</a>
+			</li>
+		<% end %>
+	</ul>
+</div>
