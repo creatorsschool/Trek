@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723112413) do
+ActiveRecord::Schema.define(version: 20150724095259) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150723112413) do
     t.string "user"
   end
 
-  create_table "instante_messages", force: :cascade do |t|
+  create_table "instant_messages", force: :cascade do |t|
     t.string   "text"
     t.string   "user_id_sent"
     t.string   "user_id_received"
