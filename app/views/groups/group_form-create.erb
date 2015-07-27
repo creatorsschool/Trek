@@ -6,7 +6,7 @@
 		<select>
 			<option>Elements</option>
 			<% @users.each do |user| %>
-			<option>
+			<option name='element' value='#{<%= user.id %>}'>
 				<%= user.first_name %>
 			</option>
 			<%end%>
