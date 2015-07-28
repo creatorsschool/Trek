@@ -3,20 +3,32 @@ get '/login' do
 end
 
 get "/" do
+	@projects = Project.all
 	@users = User.all
 	@groups = Group.all
 	@tasks = Task.all
 	erb :index
 end
 
+# => Project
+get "/project/new" do
+	erb :"/project/new"
+end
 
+post "/project/create" do
+	Project.create({
+		name: params[:name],
+		description: params[:description]
+		})
+	redirect "/"
+end
+
+# => User
 get '/user/:id/remove' do
 	User.destroy(params[:id])
 	redirect '/'
 end
 
-
-# => User
 get "/user/new" do
 	erb :"/user/new"
 end
