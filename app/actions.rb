@@ -87,12 +87,24 @@ get '/group/:id' do
 	erb :"group/show"
 end
 
-post '/group/:id/edit' do
+# ******************************************
+
+get '/group/:id/edit' do
 	@group = Group.find do |group|
 		group.id == params[:id].to_i
 	end
-	redirect '/group/#{group_id}'
+	erb :"/group/edit"
 end
+
+post '/group/:id/update/:user_id' do
+	Group.update(params[:id],
+		name: params[:name],
+		description: params[:description],
+		)
+	redirect "/"
+end
+
+# ******************************************
 
 get '/group/:id/remove' do
 	Group.destroy(params[:id])
