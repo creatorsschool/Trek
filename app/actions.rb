@@ -40,7 +40,7 @@ get '/user/:id/remove' do
 end
 
 # => Group
-get "/group/new" do
+get "/groups/new" do
 	@users = User.all
 	erb :"/group/new"
 end
