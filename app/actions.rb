@@ -37,9 +37,16 @@ get '/user/:id' do
     end
 end
 
+get '/user/:id/edit' do
+	@user = User.find do |user|
+        user.id == params[:id].to_i
+    end
+	erb :"/user/edit"
+end
+
 post '/user/:id/update' do
-    User.update(params[:id], first_name: paramas[:first_name], last_name: params[:last_name], email: params[:email])
-    redirect '/user/#{user_id}'
+    User.update(params[:id], first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
+    redirect '/'
 end
 
 get '/user/:id/remove' do

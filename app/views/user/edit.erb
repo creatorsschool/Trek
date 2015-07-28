@@ -1,0 +1,26 @@
+<div class="container edit-user">
+	<h3>Create User</h3>
+	<form action="/user/<%= @user.id%>/update" method='post'>
+		<div>
+			<label for='first_name'>First Name</label>
+		</div>
+		<div>
+			<input name='first_name' type="text" value = '<%= @user.first_name%>'>
+		</div>
+		<div>
+			<label for='last_name'>Last Name</label>
+		</div>
+		<div>
+			<input name='last_name' type="text" value ='<%= @user.last_name%>'>
+		</div>
+		<div>
+			<label for='email'>Email</label>
+		</div>
+		<div>
+			<input name='email' type="email" value ='<%= @user.email%>'>
+		</div>
+		<div>
+			<button type='submit'>update user</button>
+		</div>
+	</form>
+</div>
