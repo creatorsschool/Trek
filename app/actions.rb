@@ -23,10 +23,27 @@ post "/project/create" do
 	redirect "/"
 end
 
+get "/project/:id/edit" do
+	@project = Project.find do |project|
+		project.id == params[:id].to_i
+	end
+	erb :"/project/edit"
+end
+
+post "/project/:id/update" do
+	Project.update(params[:id], name: params[:name], description: params[:description])
+    redirect '/'
+end
+
+get "/project/:id/remove" do
+	Project.destroy(params[:id])
+	redirect "/"
+end
+
 # => User
-get '/user/:id/remove' do
+get "/user/:id/remove" do
 	User.destroy(params[:id])
-	redirect '/'
+	redirect "/"
 end
 
 get "/user/new" do
