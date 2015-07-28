@@ -3,14 +3,15 @@
 	<form action="/group/create" method="post">
 		<input type="text" name="name" placeholder="Insert your name here">
 		<input type="text" name="description" placeholder="Insert description here">
-		<select>
-			<option>Elements</option>
-			<% @users.each do |user| %>
-			<option>
-				<%= user.first_name %>
-			</option>
-			<%end%>
-		</select>
+			<div class="container">
+				<% @users.each do |user| %>
+		    	<input type="checkbox" /> <%= user.first_name %> <br />
+		    <% end %>
+			</div>
 		<button type="submit">Create group</button>
 	</form>
+<<<<<<< Updated upstream:app/views/group/new.erb
 </div>
+=======
+</div>
+>>>>>>> Stashed changes:app/views/groups/create.erb

@@ -1,3 +1,11 @@
+<<<<<<< Updated upstream
+=======
+
+get '/login' do
+	erb :"/login/login"
+end
+
+>>>>>>> Stashed changes
 get "/" do
 	@users = User.all
 	@groups = Group.all
