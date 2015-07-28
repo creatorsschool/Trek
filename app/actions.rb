@@ -1,5 +1,4 @@
-
-get '/' do
+get '/login' do
 	erb :"/login/login"
 end
 
@@ -19,7 +18,7 @@ end
 
 # => User
 get "/user/new" do
-	erb :"/users/user_form-create"
+	erb :"/user/new"
 end
 
 post "/user/create" do
@@ -40,8 +39,7 @@ end
 
 post '/user/:id/update' do
     User.update(params[:id], first_name: paramas[:first_name], last_name: params[:last_name], email: params[:email])
-    redirect '/users/#{user_id}'
-
+    redirect '/user/#{user_id}'
 end
 
 get '/user/:id/remove' do
@@ -50,9 +48,9 @@ get '/user/:id/remove' do
 end
 
 # => Group
-get "/group/new" do
+get "/groups/new" do
 	@users = User.all
-	erb :"/groups/group_form-create"
+	erb :"/group/new"
 end
 
 post '/group/create' do
@@ -85,7 +83,7 @@ end
 # => Task
 
 get "/task/new" do
-	erb :"/tasks/task_form-create"
+	erb :"/task/new"
 end
 
 post '/task/create/:user_id' do
@@ -98,7 +96,7 @@ end
 
 get '/task/:task_id/edit' do
 	@task = Task.find(params[:task_id])
-	erb :"/tasks/edit_task"
+	erb :"/task/edit"
 end
 
 post '/task/:task_id/update/:user_id' do
