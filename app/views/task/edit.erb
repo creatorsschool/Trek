@@ -3,13 +3,13 @@
 	<!-- o user_id tem de ser passado dependendo do login do user -->
 	<form action="/task/<%=@task.id%>/update/1" method='post'>
 		<div>
-			<label for='field'>Task:</label>
+			<label for="field">Task:</label>
 		</div>
 		<div>
-			<input name='field' type="text" value="<%= @task.field %>">
+			<input name="field" type="text" value="<%= @task.field %>">
 		</div>
 		<div>
-			<button type='submit'>update task</button>
+			<button type="submit">update task</button>
 		</div>
 	</form>
 </div>
