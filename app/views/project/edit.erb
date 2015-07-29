@@ -1,0 +1,8 @@
+<div class="container project-edit">
+	<h3>Edit Project</h3>
+	<form action="/project/<%=@project.id%>/update" method="post">
+		<input type = "text" name = "name" value = "<%=@project.name%>">
+		<input type = "text" name = "description" value = "<%=@project.description%>">
+		<button type = "submit">Create Project</button>
+	</form>
+</div>
