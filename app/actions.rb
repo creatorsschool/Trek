@@ -134,13 +134,16 @@ get "/task/new" do
 	erb :"/task/new"
 end
 
+# ******************************************
 post '/task/create/:user_id' do
 	Task.create({
 		field: params[:field],
-		user_id: params[:user_id]
+		user_id: params[:user_id],
+		status: true
 		})
 	redirect '/'
 end
+# ******************************************
 
 get '/task/:task_id/edit' do
 	@task = Task.find(params[:task_id])
@@ -159,3 +162,16 @@ get '/task/:id/remove' do
 	Task.destroy(params[:id])
 	redirect '/'
 end
+
+# ******************************************
+# change task status from True to False or vice-versa;
+
+get "/task/:id/toggle" do
+  task = Task.find(params[:id])
+  task.status = !task.status
+  task.save
+  redirect "/"
+end
+
+# ******************************************
+
