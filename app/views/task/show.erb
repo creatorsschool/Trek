@@ -4,8 +4,11 @@
 		<% @tasks.each do |task| %>
 			<li>
 				<%= task.field %>
-				<a href='/task/<%=task.id%>/remove'>Remove</a>
-				<a href='/task/<%=task.id%>/edit'>Edit</a>
+<!-- ********************************************************* -->
+			  <a href="/task/<%=task.id%>/toggle">Toggle</a>
+<!-- ********************************************************* -->
+				<a href="/task/<%=task.id%>/remove">Remove</a>
+				<a href="/task/<%=task.id%>/edit">Edit</a>
 			</li>
 		<% end %>
 	</ul>
