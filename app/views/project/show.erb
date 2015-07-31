@@ -1,0 +1,12 @@
+<div class="container-list-groups">
+	<h3> List all Projects </h3>
+	<ul class="list-groups">
+		<% @projects.each do |project| %>
+			<li>
+				<%= project.name %>
+				<a href="/project/<%= project.id %>/remove"><button>Remove project</button></a>
+				<a href="/project/<%= project.id %>/edit"><button>Edit project</button></a>
+			</li>
+		<% end %>
+	</ul>
+</div>

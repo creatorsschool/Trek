@@ -3,13 +3,49 @@ get '/login' do
 end
 
 get "/" do
+	@projects = Project.all
 	@users = User.all
 	@groups = Group.all
 	@tasks = Task.all
 	erb :index
 end
 
+# => Project
+get "/project/new" do
+	erb :"/project/new"
+end
+
+post "/project/create" do
+	Project.create({
+		name: params[:name],
+		description: params[:description]
+		})
+	redirect "/"
+end
+
+get "/project/:id/edit" do
+	@project = Project.find do |project|
+		project.id == params[:id].to_i
+	end
+	erb :"/project/edit"
+end
+
+post "/project/:id/update" do
+	Project.update(params[:id], name: params[:name], description: params[:description])
+    redirect '/'
+end
+
+get "/project/:id/remove" do
+	Project.destroy(params[:id])
+	redirect "/"
+end
+
 # => User
+get "/user/:id/remove" do
+	User.destroy(params[:id])
+	redirect "/"
+end
+
 get "/user/new" do
 	erb :"/user/new"
 end
@@ -24,14 +60,22 @@ post "/user/create" do
 end
 
 get '/user/:id' do
+
     @user = User.find do |user|
         user.id == params[:id].to_i
     end
 end
 
+get '/user/:id/edit' do
+	@user = User.find do |user|
+        user.id == params[:id].to_i
+    end
+	erb :"/user/edit"
+end
+
 post '/user/:id/update' do
-    User.update(params[:id], first_name: paramas[:first_name], last_name: params[:last_name], email: params[:email])
-    redirect '/user/#{user_id}'
+    User.update(params[:id], first_name: params[:first_name], last_name: params[:last_name], email: params[:email])
+    redirect '/'
 end
 
 get '/user/:id/remove' do
@@ -53,18 +97,31 @@ post '/group/create' do
 	redirect '/'
 end
 
+
 get '/group/:id' do
 	@group = Group.find(params[:id])
 	@users = @group.users
 	erb :"group/show"
 end
 
-post '/group/:id/edit' do
+# ******************************************
+
+get '/group/:id/edit' do
 	@group = Group.find do |group|
 		group.id == params[:id].to_i
 	end
-	redirect '/group/#{group_id}'
+	erb :"/group/edit"
 end
+
+post '/group/:id/update/:user_id' do
+	Group.update(params[:id],
+		name: params[:name],
+		description: params[:description],
+		)
+	redirect "/"
+end
+
+# ******************************************
 
 get '/group/:id/remove' do
 	Group.destroy(params[:id])
@@ -72,17 +129,21 @@ get '/group/:id/remove' do
 end
 
 # => Task
+
 get "/task/new" do
 	erb :"/task/new"
 end
 
+# ******************************************
 post '/task/create/:user_id' do
 	Task.create({
 		field: params[:field],
-		user_id: params[:user_id]
+		user_id: params[:user_id],
+		status: true
 		})
 	redirect '/'
 end
+# ******************************************
 
 get '/task/:task_id/edit' do
 	@task = Task.find(params[:task_id])
@@ -101,3 +162,16 @@ get '/task/:id/remove' do
 	Task.destroy(params[:id])
 	redirect '/'
 end
+
+# ******************************************
+# change task status from True to False or vice-versa;
+
+get "/task/:id/toggle" do
+  task = Task.find(params[:id])
+  task.status = !task.status
+  task.save
+  redirect "/"
+end
+
+# ******************************************
+

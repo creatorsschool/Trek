@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728142550) do
+ActiveRecord::Schema.define(version: 20150729101359) do
 
   create_table "groups", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "user"
+    t.string  "name"
+    t.string  "description"
+    t.integer "project_id"
   end
 
   create_table "instant_messages", force: :cascade do |t|
     t.string   "text"
-    t.string   "user_id_sent"
-    t.string   "user_id_received"
-    t.string   "group_id"
     t.datetime "time"
+    t.integer  "user_id_sent"
+    t.integer  "user_id_received"
+    t.integer  "group_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 20150728142550) do
   create_table "tasks", force: :cascade do |t|
     t.string  "field"
     t.boolean "status"
-    t.string  "user_id"
+    t.integer "user_id"
   end
 
   create_table "user_groups", force: :cascade do |t|
-    t.string "group_id"
-    t.string "user_id"
+    t.integer "group_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

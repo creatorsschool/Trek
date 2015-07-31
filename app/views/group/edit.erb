@@ -1,0 +1,22 @@
+<div class="form-edit_group">
+  <h3>Edit Group:</h3>
+    <!-- o user_id tem de ser passado dependendo do login do user -->
+  <form action="/group/<%=@group.id%>/update/1" method='post'>
+    <div>
+      <label for="field">Group name:</label>
+    </div>
+    <div>
+      <input name="name" type="text" value="<%= @group.name %>">
+
+      <div>
+      <label for="field">Group description:</label>
+    </div>
+
+      <input name="description" type="text" value="<%= @group.description %>">
+    </div>
+
+    <div>
+      <button type='submit'>update group</button>
+    </div>
+  </form>
+</div>

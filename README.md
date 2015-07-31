@@ -5,6 +5,9 @@
 Key features:
 
 * To-Do manager
+
+Future updates:
+
 * Instant messaging
 
 Team members:
