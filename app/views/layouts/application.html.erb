@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
+        <!-- Boostrap Compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+
+        <!-- Materialize Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   <title>Trek</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,6 +20,12 @@
 <body>
 
 <%= yield %>
+
+ <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ <!-- Materialize Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
 
 </body>
 </html>
