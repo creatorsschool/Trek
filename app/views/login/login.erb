@@ -4,55 +4,72 @@
 	<title>Trek</title>
 </head>
 <body>
-	<div class="container-fluid">
-		<div class="embed-responsive embed-responsive-16by9">
-			<div id="background">
-				<iframe id='player' width="100%" height="100%" src="https://www.youtube.com/embed/Rk6_hdRtJOE?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;loop=1&amp;playlist=Rk6_hdRtJOE&amp;enablejsapi=1&version=3" frameborder="0"></iframe>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Sign Up</button>
-				</div>
-				<div class="col-md-6 col-md-offset-3">
-					<h1><b>Trek</b></h1>
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">@</span>
-						<input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon1">
-					</div>
-					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">?</span>
-						<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-					</div>
-					<button type="submit" class="btn btn-primary btn-block">Enter</button>
-				</div>
-				<div class="col-md-4">
-					<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-						<div class="modal-dialog modal-sm">
-							<div class="modal-content">
-								<h1><b>Sign up</b></h1>
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">F</span>
-									<input type="text" class="form-control" placeholder="First name" aria-describedby="basic-addon1">
-								</div>
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">L</span>
-									<input type="text" class="form-control" placeholder="Last name" aria-describedby="basic-addon1">
-								</div>
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">@</span>
-									<input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-								</div>
-								<div class="input-group">
-									<span class="input-group-addon" id="basic-addon1">?</span>
-									<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-								</div>
-								<button type="Submit" class="btn btn-primary">Submit</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>          
+	<div class="login-signup-container">
+		<div class="login-container">
+			<a class="waves-effect waves-light btn modal-trigger" href="#modal2">Login</a>
+		</div>
+		<div class="signup-container">
+			<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sign up</a>
+		</div>
 	</div>
-</body>
-</html>
+	<div class="row">
+		<div class="aplication-name">
+			<h1>TREK</h1>
+		</div>
+		<div class="container">
+			<div id="modal1" class="modal">
+				<div class="modal-content">
+					<div class="row">
+						<form class="col s12">
+							<div class="row">
+								<div class="input-field">
+									<i class="material-icons prefix">F</i>
+									<input id="first_name" type="text" class="validate">
+									<label for="first_name">First Name</label>
+								</div>
+								<div class="input-field">
+									<i class="material-icons prefix">L</i>
+									<input id="last_name" type="text" class="validate">
+									<label for="last_name">Last Name</label>
+								</div>
+								<div class="input-field">
+									<i class="material-icons prefix">email</i>
+									<input id="email" type="email" class="validate">
+									<label for="email">Email</label>
+								</div>
+								<div class="input-field">
+									<i class="material-icons prefix">lock_outline</i>
+									<input id="Password" type="text" class="validate">
+									<label for="Password">Password</label>
+								</div>
+								<div class="modal-footer">
+									<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="modal2" class="modal">
+			<div class="modal-content">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">email</i>
+					<input id="icon_prefix" type="text" class="validate">
+					<label for="icon_prefix">Email</label>
+					<div class="input-field">
+						<i class="material-icons prefix">lock_outline</i>
+						<input id="lock_outline" type="text" class="validate">
+						<label for="lock_outline">Password</label>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Login</a>
+			</div>
+		</div>
+		<div class="biohazard">
+		</div>
+	</body>
+	</html>

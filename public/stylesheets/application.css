@@ -1,35 +1,79 @@
-.input-group{
-	margin-bottom: 5px;
+
+.login-signup-container{
+	display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; 
+   flex-direction: row;
+   -webkit-justify-content: flex-start;
+   justify-content: flex-start;	
+   margin-top: 40px;
 }
 
-.col-md-4{
-	margin-bottom: 300px;
-	margin-left: 1100px;
-	margin-top: 30px;
+.signup-container{
+	margin-left: 890px;
 }
 
-html, body{ height: 100%; margin: 0; padding: 0;}
-#background {
-	opacity: .6;
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: -999;
-    width: 100%;
-    height: 100%;
-}
-.container-fluid{margin: 0; padding: 0; height: 100%;}
-.embed-responsive{height: 100%;}
-
-.input-group-addon {
-	min-width: 40px;
+.login-container{
+	margin-left: 50px;
 }
 
-.modal-content button{
-	margin-left: 120px;
-	margin-bottom: 10px;
+.aplication-name{
+	display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+	color: #ee6e73;
+	margin-top: 200px;
+	
 }
 
-.modal-content h1{
-	margin-left: 100px;
+.modal .modal-footer {
+	width: 60%;
 }
+
+body{
+	background-color: purple;
+}
+/*.biohazard {
+  height: 0px;
+  width: 0px;
+  border-bottom: 60px solid black;
+  border-top: 60px solid black;
+  border-left: 60px solid yellow;
+  border-right: 60px solid yellow;
+  
+  animation-name: stretch;
+  animation-duration: 1.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running; 
+  z-index: -999;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}*/
+
