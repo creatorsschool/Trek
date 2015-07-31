@@ -1,0 +1,5 @@
+log/*
+
+*.sqllite3
+
+.DS_Store
