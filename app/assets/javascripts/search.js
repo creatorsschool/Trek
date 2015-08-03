@@ -1,26 +1,11 @@
-function show(id){
-    document.getElementById(id).style.display = 'block';
-    document.getElementById("searchButton").style.display = 'none';
-}
-                    
-function hide(id){
-    document.getElementById(id).style.display = 'none';
-    document.getElementById("searchButton").style.display = 'block';
-}
-
-function eraseText() {
-   document.getElementById("icon_prefix").value = "";
-}
-
-
 $(function() {
 
 	$('#searchButton').on('click', function() {
-		show('searchInput');
+		$('#searchInput').slideToggle();
 	});
 
 	$("#clearSearch").on('click', function(){
-		eraseText();
+        $('#icon_prefix').val("");
 	});
 
 	$(document).ready(function(){
