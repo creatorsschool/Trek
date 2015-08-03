@@ -16,7 +16,7 @@ function eraseText() {
 $(function() {
 
 	$('#searchButton').on('click', function() {
-		show('comment');
+		show('searchInput');
 	});
 
 	$("#clearSearch").on('click', function(){

@@ -3349,3 +3349,136 @@ Processing by DashboardController#index as HTML
   [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
   Rendered dashboard/index.erb within layouts/application (1.7ms)
 Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered dashboard/index.erb within layouts/application (2.9ms)
+Completed 200 OK in 380ms (Views: 348.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/search.self-bfd20ebf2354d5ef6f67d82935c626484698ba2de5fff69e44112da1a54264b7.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 11:55:14 +0100
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 11:57:13 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered dashboard/index.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2015-08-03 11:57:19 +0100
+Processing by TasksController#new as HTML
+  Rendered tasks/new.erb within layouts/application (18.7ms)
+Completed 200 OK in 69ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2015-08-03 11:57:24 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "task"=>{"field"=>"tarefa 1"}, "commit"=>"Save Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO "tasks" ("field") VALUES (?)[0m  [["field", "tarefa 1"]]
+  [1m[35m (185.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 207ms (ActiveRecord: 190.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 11:57:25 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered dashboard/index.erb within layouts/application (4.3ms)
+Completed 200 OK in 105ms (Views: 103.7ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/tasks/8/toggle" for 127.0.0.1 at 2015-08-03 11:57:30 +0100
+Processing by TasksController#toggle as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "status" = ? WHERE "tasks"."id" = ?  [["status", "t"], ["id", 8]]
+  [1m[36m (156.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 172ms (ActiveRecord: 157.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 11:57:31 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered dashboard/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 12:02:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered dashboard/index.erb within layouts/application (8.2ms)
+Completed 200 OK in 306ms (Views: 274.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2015-08-03 12:02:29 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered dashboard/index.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 56.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:02:31 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered dashboard/index.erb within layouts/application (1.6ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:03:50 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered dashboard/index.erb within layouts/application (2.6ms)
+Completed 200 OK in 73ms (Views: 72.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:05:54 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.5ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered dashboard/index.erb within layouts/application (3.1ms)
+Completed 200 OK in 254ms (Views: 249.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for 127.0.0.1 at 2015-08-03 12:05:54 +0100
+
+
+Started GET "/?search=aanannana" for 127.0.0.1 at 2015-08-03 12:06:10 +0100
+Processing by DashboardController#index as HTML
+  Parameters: {"search"=>"aanannana"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered dashboard/index.erb within layouts/application (1.2ms)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.2ms)
