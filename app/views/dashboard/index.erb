@@ -77,9 +77,15 @@
 <h1>Home Page</h1>
 
 <div class="newProject">
-    <a href='/project/new'><button>New Project</button></a>
+    <button><%= link_to "New Project", new_project_path %></button>
+    <ul class="list-projects">
+        <% @projects.each do |project| %>
+            <li>
+                <%= project.name %>
+            </li>
+        <% end %>
+    </ul>
 </div>
-
 
 <div class="new_user">
   <a href='/user/new'><button>New User</button></a>
