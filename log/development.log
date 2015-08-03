@@ -3482,3 +3482,689 @@ Processing by DashboardController#index as HTML
   [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
   Rendered dashboard/index.erb within layouts/application (1.2ms)
 Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 12:31:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (11.0ms)
+Completed 200 OK in 540ms (Views: 500.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 12:31:50 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 12:31:50 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 12:31:50 +0100
+
+
+Started PUT "/tasks/8/toggle" for ::1 at 2015-08-03 12:31:56 +0100
+Processing by TasksController#toggle as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "tasks" SET "status" = ? WHERE "tasks"."id" = ?  [["status", "f"], ["id", 8]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:31:56 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 113ms (Views: 111.3ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/tasks/8/toggle" for ::1 at 2015-08-03 12:31:59 +0100
+Processing by TasksController#toggle as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "status" = ? WHERE "tasks"."id" = ?  [["status", "t"], ["id", 8]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:31:59 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (2.5ms)
+Completed 200 OK in 114ms (Views: 112.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/8/edit" for ::1 at 2015-08-03 12:32:00 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tasks/edit.erb within layouts/application (35.5ms)
+Completed 200 OK in 129ms (Views: 127.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/8" for ::1 at 2015-08-03 12:32:05 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "task"=>{"field"=>"tarefa 2"}, "commit"=>"Save Task", "id"=>"8"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tasks" SET "field" = ? WHERE "tasks"."id" = ?[0m  [["field", "tarefa 2"], ["id", 8]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:32:05 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 112ms (Views: 110.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/tasks/8" for ::1 at 2015-08-03 12:32:07 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 8]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 6ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:32:07 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (1.9ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2015-08-03 12:32:09 +0100
+Processing by TasksController#new as HTML
+  Rendered tasks/new.erb within layouts/application (1.8ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for ::1 at 2015-08-03 12:32:13 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "task"=>{"field"=>"hello"}, "commit"=>"Save Task"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("field") VALUES (?)  [["field", "hello"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 4ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:32:13 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/tasks/9" for ::1 at 2015-08-03 12:32:21 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 9]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:32:21 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (2.0ms)
+Completed 200 OK in 66ms (Views: 64.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 12:47:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (5.4ms)
+Completed 200 OK in 357ms (Views: 318.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 12:47:54 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (1.5ms)
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 12:50:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (7.1ms)
+Completed 200 OK in 358ms (Views: 321.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-03 12:50:26 +0100
+
+
+Started GET "/groups/new" for ::1 at 2015-08-03 12:50:58 +0100
+Processing by GroupsController#new as HTML
+  Rendered groups/new.erb within layouts/application (27.8ms)
+Completed 200 OK in 139ms (Views: 131.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/groups" for ::1 at 2015-08-03 12:51:06 +0100
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"trek", "description"=>"trek group"}, "commit"=>"Create Group"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "groups" ("name", "description") VALUES (?, ?)  [["name", "trek"], ["description", "trek group"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 16ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:07 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.9ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (5.3ms)
+Completed 200 OK in 173ms (Views: 170.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/groups/1" for ::1 at 2015-08-03 12:51:11 +0100
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered groups/show.erb within layouts/application (1.3ms)
+Completed 200 OK in 80ms (Views: 63.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/1/edit" for ::1 at 2015-08-03 12:51:16 +0100
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mGroup Load (0.2ms)[0m  SELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered groups/edit.erb within layouts/application (3.2ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/groups/1" for ::1 at 2015-08-03 12:51:21 +0100
+Processing by GroupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"rgergergqerg", "description"=>"trek group"}, "commit"=>"Update Group", "id"=>"1"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "groups" SET "name" = ? WHERE "groups"."id" = ?[0m  [["name", "rgergergqerg"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:21 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (3.3ms)
+Completed 200 OK in 226ms (Views: 223.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/groups/1" for ::1 at 2015-08-03 12:51:23 +0100
+Processing by GroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[35mGroup Load (0.6ms)[0m  SELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "groups" WHERE "groups"."id" = ?  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:23 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (2.4ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/groups/new" for ::1 at 2015-08-03 12:51:26 +0100
+Processing by GroupsController#new as HTML
+  Rendered groups/new.erb within layouts/application (2.1ms)
+Completed 200 OK in 69ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/groups" for ::1 at 2015-08-03 12:51:29 +0100
+Processing by GroupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "group"=>{"name"=>"ergqgerg", "description"=>"eqrgergerg"}, "commit"=>"Create Group"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "groups" ("name", "description") VALUES (?, ?)  [["name", "ergqgerg"], ["description", "eqrgergerg"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:29 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (6.0ms)
+Completed 200 OK in 134ms (Views: 132.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/groups/2/edit" for ::1 at 2015-08-03 12:51:31 +0100
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered groups/edit.erb within layouts/application (2.8ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:34 +0100
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (3.5ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (24.6ms)
+Completed 200 OK in 106ms (Views: 101.0ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/groups/2" for ::1 at 2015-08-03 12:51:36 +0100
+Processing by GroupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:51:36 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 74ms (Views: 72.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/dashboard" for ::1 at 2015-08-03 12:53:07 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.3ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (7.2ms)
+Completed 200 OK in 362ms (Views: 323.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for ::1 at 2015-08-03 12:53:07 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 12:53:07 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 12:53:07 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for ::1 at 2015-08-03 12:53:07 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-03 12:53:08 +0100
+
+
+Started GET "/" for ::1 at 2015-08-03 12:53:11 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (3.6ms)
+Completed 200 OK in 82ms (Views: 79.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 13:09:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (7.7ms)
+Completed 200 OK in 360ms (Views: 318.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 13:09:13 +0100
+
+
+Started GET "/" for ::1 at 2015-08-03 13:10:13 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mGroup Load (0.2ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-03 13:10:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-08-03 15:10:49 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.1) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.1) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/MacBook/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/MacBook/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/MacBook/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (101.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddClearanceToUsers (20150803141022)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "encrypted_password" varchar(128)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "confirmation_token" varchar(128)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "remember_token" varchar(128)[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.1ms)[0m  SELECT id FROM users WHERE remember_token IS NULL
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150803141022"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_remember_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_remember_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-08-03 15:11:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mGroup Load (0.2ms)[0m  SELECT "groups".* FROM "groups"
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (7.5ms)
+Completed 200 OK in 381ms (Views: 322.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-03 15:11:29 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 15:11:30 +0100
+
+
+Started GET "/assets/search.self-d4ef3cf454abbf145bdd6c921d3cf11ed3e4560ed688b2f73bafca18488859a2.js?body=1" for ::1 at 2015-08-03 15:11:30 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for ::1 at 2015-08-03 15:11:30 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-03 15:11:30 +0100
+
+
+Started GET "/sign_in" for ::1 at 2015-08-03 15:11:47 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/sessions/_form.html.erb (15.1ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/sessions/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 148ms (Views: 147.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_up" for ::1 at 2015-08-03 15:13:08 +0100
+Processing by Clearance::UsersController#new as HTML
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/users/_form.html.erb (9.3ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/users/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 203ms (Views: 184.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2015-08-03 15:13:28 +0100
+Processing by Clearance::UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"fabio@email.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'fabio@email.com' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "remember_token") VALUES (?, ?, ?)[0m  [["email", "fabio@email.com"], ["encrypted_password", "$2a$10$GewB2chSAIkdRuFUG8aB1uDDZC22fbh7U5925XvT8UmEvB9vfU8jC"], ["remember_token", "f1af2c9824093737ba60bdb858c09e9a29a52f56"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2015-08-03 15:13:28 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT "groups".* FROM "groups"[0m
+  [1m[35mTask Load (0.4ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (9.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "f1af2c9824093737ba60bdb858c09e9a29a52f56"]]
+Completed 200 OK in 157ms (Views: 154.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/sign_out" for ::1 at 2015-08-03 15:14:38 +0100
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "f1af2c9824093737ba60bdb858c09e9a29a52f56"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mUPDATE "users" SET "remember_token" = ? WHERE "users"."id" = ?[0m  [["remember_token", "3a7dd7b9a74ac3d288f9fe4f14b574b4dd90e409"], ["id", 1]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/sign_in" for ::1 at 2015-08-03 15:14:38 +0100
+Processing by Clearance::SessionsController#new as HTML
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/sessions/_form.html.erb (2.5ms)
+  Rendered /Users/MacBook/.rvm/gems/ruby-2.2.1/gems/clearance-1.10.1/app/views/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.0ms)
