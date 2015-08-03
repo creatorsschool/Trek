@@ -81,7 +81,7 @@
     <ul class="list-projects">
         <% @projects.each do |project| %>
             <li>
-                <%= project.name %>
+                <%= link_to project.name, project_path(project) %>
                 <button><%= link_to "Remove", project_path(project), method: :delete %></button>
                 <button><%= link_to "Edit", edit_project_path(project) %></button>
             </li>

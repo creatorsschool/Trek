@@ -31,4 +31,8 @@ class ProjectsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def show
+    @project = Project.find params[:id]
+  end
+
 end
