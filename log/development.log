@@ -3482,3 +3482,336 @@ Processing by DashboardController#index as HTML
   [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
   Rendered dashboard/index.erb within layouts/application (1.2ms)
 Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:32:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DashboardController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  Rendered dashboard/index.erb within layouts/application (8.7ms)
+Completed 200 OK in 432ms (Views: 401.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:32:40 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:32:40 +0100
+
+
+Started PUT "/tasks/8/toggle" for 127.0.0.1 at 2015-08-03 12:32:46 +0100
+Processing by TasksController#toggle as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[35mTask Load (5.7ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 8]]
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.7ms)
+
+NoMethodError (undefined method `save=' for true:TrueClass):
+  app/controllers/tasks_controller.rb:27:in `toggle'
+
+
+  Rendered /home/anaclaudia/.rvm/gems/ruby-head/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/anaclaudia/.rvm/gems/ruby-head/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/anaclaudia/.rvm/gems/ruby-head/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/anaclaudia/.rvm/gems/ruby-head/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:33:20 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (7.9ms)
+Completed 200 OK in 101ms (Views: 65.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/?search=" for 127.0.0.1 at 2015-08-03 12:33:32 +0100
+Processing by DashboardController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (2.3ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2015-08-03 12:33:40 +0100
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.erb within layouts/application (35.5ms)
+Completed 200 OK in 100ms (Views: 95.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search=" for 127.0.0.1 at 2015-08-03 12:33:42 +0100
+Processing by DashboardController#index as HTML
+  Parameters: {"search"=>""}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (4.7ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?search=bh" for 127.0.0.1 at 2015-08-03 12:47:24 +0100
+Processing by DashboardController#index as HTML
+  Parameters: {"search"=>"bh"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (5.5ms)
+Completed 200 OK in 107ms (Views: 105.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:49:13 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 129ms (Views: 128.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:49:13 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (3.5ms)
+Completed 200 OK in 67ms (Views: 61.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/search.self-b5fe490e1aa969815ce5891de46512c120bf70783ad48e4ba31b651a64d4e479.js?body=1" for 127.0.0.1 at 2015-08-03 12:49:13 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:50:42 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (9.2ms)
+Completed 200 OK in 149ms (Views: 147.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/search.self-788420d4c3cfe8d3ab11e7674887f74db3aac5506ed640df01d2574ea26d96b2.js?body=1" for 127.0.0.1 at 2015-08-03 12:50:43 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:53:23 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (2.8ms)
+Completed 200 OK in 138ms (Views: 136.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/search.self-50de513f551a822f8dd4ad3506973bfabd2aa2158dea87f10039d4b2c7e481f1.js?body=1" for 127.0.0.1 at 2015-08-03 12:53:24 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:55:40 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (3.0ms)
+Completed 200 OK in 162ms (Views: 161.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 12:55:40 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:55:40 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/search.self-6498eb47a238ea4da3c94012d95501715bc60c9c92c476d67fea2d843ac2179d.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 12:55:41 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (3.2ms)
+Completed 200 OK in 148ms (Views: 146.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/search.self-a0408bd985eb26d8d1a056abe1055bccdd4b256aeff190235747d7be99343fdd.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:02 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (1.7ms)
+Completed 200 OK in 159ms (Views: 158.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/search.self-4dd6eb91a1839fb7fe2519b9b1b770f62b8ec6103c9e9ba0786e05e7a31cc09d.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 12:56:33 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (4.5ms)
+Completed 200 OK in 142ms (Views: 141.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/search.self-e64c4d3c82d9543cd3460cf1b5faaff171dbc3179004d77d5e4348e6fc659f73.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 12:57:09 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-03 12:59:58 +0100
+Processing by DashboardController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects"
+  Rendered dashboard/index.erb within layouts/application (3.7ms)
+Completed 200 OK in 215ms (Views: 214.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/normalize.self-a2d7a42cab44c2f1eb7d1aeb244b1552a6058371a39d6e2c0dad260951db01bc.css?body=1" for 127.0.0.1 at 2015-08-03 12:59:58 +0100
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:59:58 +0100
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/application.self-ff8698d02b5b7cf93ce1e0c620094701f57c80abd06d78b684fb1bf036e932bb.css?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/search.self-5a2989ee9145cdcd4e1da78c619373f58e4ed4735a491f8f13d0ac72079b412f.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/jquery-1.11.3.min.self-ad66c584c2469d2bb527ba7aef5893549f1554ccc8ab3ccb43bd09ce8c3bf7a1.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-08-03 12:59:59 +0100
