@@ -1,0 +1,11 @@
+
+<div class="form-edit_group">
+  <h3>Edit Group:</h3>
+  <%= form_for @group do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br />
+  <%= f.submit %>
+<% end %>
+</div>

@@ -1,0 +1,6 @@
+<h3>Group name:</h3>
+<%= @group.name %>
+<h3>Description:</h3>
+<%= @group.description %>
+<p><button><%= link_to 'Edit',edit_group_path %></button></p>
+<p> <button><%= link_to 'Delete', group_path, :method => :delete, data: {confirm: "Are you sure?"} %></p></button></p>

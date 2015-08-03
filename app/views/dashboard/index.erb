@@ -61,6 +61,15 @@
     </ul>
 </div>
 
+<ul class="list-groups">
+        <% @groups.each do |group| %>
+        <li>
+            <%= link_to group.name, group_path(group) %>
+            <%= link_to 'Delete', group_path(group), :method => :delete %>
+            <%= link_to 'Edit',edit_group_path(group) %>
+        <% end %>
+    </ul>
+
 
 
 
@@ -86,7 +95,7 @@
 </div>
 
 <div class="new_group">
-  <a href='/groups/new'><button>New Group</button></a>
+  <button><%= link_to 'New group', new_group_path %></button>
 </div>
 
 
