@@ -5,8 +5,16 @@
                 <a href="#!" class="brand-logo center">Trek</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">add</i></a></li>
-                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                    <li>
+                        <a class="waves-effect waves-light modal-trigger" href="#modal1">
+                            <i class="material-icons">add</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <i id="searchButton" class="material-icons">search</i>
+                        </a>
+                    </li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="sass.html">Sass</a></li>
@@ -19,16 +27,17 @@
     </div>
 </header>
 
-<div class="search-container">
+<div class="search-container" id ="searchInput" style="display:none;">
     <div class="container">
         <div class="search-header">
             <div class="nav-wrapper">
-                <form>
+                <form action="#">
                     <div class="search-field">
                         <div class="input-field">
                             <i class="material-icons prefix">search</i>
-                            <input id="icon_prefix" type="text">
-                            <button type="button" class="clear-search">
+                            <input id="icon_prefix" type="text" name="search">
+                            <!-- limpa o que estiver no input -->
+                            <button id="clearSearch" type="button" class="clear-search">
                                 <i class="material-icons">close</i>
                             </button>
                         </div>
@@ -76,8 +85,26 @@
 
 <h1>Home Page</h1>
 
-<div class="newProject">
-    <button><%= link_to "New Project", new_project_path %></button>
+<div class="newTask">
+    <button>
+        <%= link_to 'New task', new_task_path %>
+    </button>
+    
+</div>
+<% @tasks.each do |task| %>
+    <ul>
+        <li>
+            <%= task.field %>
+            <%= task.status %>
+            <%= link_to 'Toggle', toggle_task_path(task), method: :put %>
+            <%= link_to 'Edit', edit_task_path(task) %>
+            <%= link_to 'Destroy', task_path(task), method: :delete %>
+        </li>
+    </ul>
+<% end %>
+<button>
+    <%= link_to "New Project", new_project_path %>
+</button>
     <ul class="list-projects">
         <% @projects.each do |project| %>
             <li>
@@ -89,15 +116,3 @@
     </ul>
 </div>
 
-<div class="new_user">
-  <a href='/user/new'><button>New User</button></a>
-</div>
-
-<div class="new_group">
-  <a href='/groups/new'><button>New Group</button></a>
-</div>
-
-
-<div class="new_task">
-  <a href='/task/new'><button>Add Task</button></a>
-</div>
