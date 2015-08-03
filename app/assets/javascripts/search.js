@@ -1,4 +1,7 @@
-$(function() {
+$(document).ready(function(){
+	$('.modal-trigger').leanModal();
+
+	$(".button-collapse").sideNav();
 
 	$('#searchButton').on('click', function() {
 		$('#searchInput').slideToggle();
@@ -7,16 +10,4 @@ $(function() {
 	$("#clearSearch").on('click', function(){
         $('#icon_prefix').val("");
 	});
-
-	$(document).ready(function(){
-    	$('.modal-trigger').leanModal();
-    	$(".button-collapse").sideNav();
-    	$(".teste").on("click", function(evt) {
-    		evt.preventDefault();
-    		$(".search-container").slideToggle();
-    	});
-	});
-
-
-	
 });
