@@ -85,10 +85,12 @@
 
 <h1>Home Page</h1>
 
-<div class="newProject">
-    <%= link_to 'New task', new_task_path %>
+<div class="newTask">
+    <button>
+        <%= link_to 'New task', new_task_path %>
+    </button>
+    
 </div>
-
 <% @tasks.each do |task| %>
     <ul>
         <li>
@@ -100,3 +102,17 @@
         </li>
     </ul>
 <% end %>
+<button>
+    <%= link_to "New Project", new_project_path %>
+</button>
+    <ul class="list-projects">
+        <% @projects.each do |project| %>
+            <li>
+                <%= project.name %>
+                <button><%= link_to "Remove", project_path(project), method: :delete %></button>
+                <button><%= link_to "Edit", edit_project_path(project) %></button>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
