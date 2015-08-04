@@ -1,0 +1,2 @@
+module InstMessageHelper
+end

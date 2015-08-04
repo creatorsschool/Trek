@@ -1,0 +1,26 @@
+<h1>Instant Message Aldrabado</h1>
+
+<h5>Messages Sent</h5>
+<% @messages_sent.each do |message| %>
+  <p>
+    <%= message.text %>  by <%= message.sending_user.first_name %> 
+  </p> 
+<% end %>
+
+<h5>Messages Received</h5>
+<% @messages_received.each do |message| %>
+  <p>
+    <%= message.text %> by <%= message.receiving_user.first_name %> 
+  </p>
+<% end %>
+
+<%= form_for :instant_message, url: instant_messages_path, method: :post do |f| %>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
