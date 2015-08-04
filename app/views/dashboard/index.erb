@@ -1,24 +1,24 @@
-<div class="container">
-    <div class="row">
-        <div class="col s12 m9 l10">
-            <ul class="collection with-header">
-                <li class="collection-header"><h4>Project Name</h4></li>
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-                <li class="collection-item">Alvin</li>
-            </ul>
-        </div>
-    </div>
+<button>
+    <%= link_to "New Project", new_project_path %>
+</button>
 
-    <ul class="collection with-header">
-        <li class="collection-header"><h4>Project Name</h4></li>
-        <li class="collection-item">Alvin</li>
-        <li class="collection-item">Alvin</li>
-        <li class="collection-item">Alvin</li>
-        <li class="collection-item">Alvin</li>
-    </ul>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <div>
+      <h3>Project List:</h3>
+      <div class="collection list-projects">
+        <% @projects.each do |project| %>
+          <%= link_to project.name, project_path(project), class: "collection-item" %>
+        <% end %>
+      </div>
+    </div>  
+  </div>
 </div>
+
+
+
+
+<!-- ***************************************************** -->
 
 <ul class="list-groups">
         <% @groups.each do |group| %>
@@ -68,18 +68,7 @@
         </li>
     </ul>
 <% end %>
-<button>
-    <%= link_to "New Project", new_project_path %>
-</button>
-    <ul class="list-projects">
-        <% @projects.each do |project| %>
-            <li>
-                <%= link_to project.name, project_path(project) %>
-                <button><%= link_to "Remove", project_path(project), method: :delete %></button>
-                <button><%= link_to "Edit", edit_project_path(project) %></button>
-            </li>
-        <% end %>
-    </ul>
+
 
 </div>
 
