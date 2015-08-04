@@ -1,15 +1,48 @@
 <div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+  <!-- <h2><%= t(".title") %></h2> -->
 
   <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-
-    <div class="submit-field">
-      <%= form.submit %>
+  <div class="row">
+    <div class="col s6">
+      <div class="app_name-login-page">
+        <h1>Welcome to</h1>
+        <p>Trek</p>
+      </div>
     </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+    <div class="col s6">
+      <div class="login-signup-container">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">F</i>
+              <%= form.label :first_name %>
+              <%= form.text_field :first_name %>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">L</i>
+              <%= form.label :last_name %>
+              <%= form.text_field :last_name %>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">email</i>
+              <%= form.label :email %>
+              <%= form.text_field :email, type: 'email' %>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">lock_outline</i>
+              <%= form.label :password %>
+              <%= form.password_field :password %>
+            </div>
+          </div>
+        </form>
+        <div class="submit-login-signup-field">
+          <a class="waves-effect waves-light btn"><%= form.submit class: "form-submit-button" %></a>
+        </div>
+        <div class="other-links">
+          <%= link_to t(".sign_in"), sign_in_path %>
+        </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+    </div>  
 </div>

@@ -1,6 +1,8 @@
-<div id="clearance" class="sign-in">
-  <h2><%= t(".title") %></h2>
+<% content_for(:body_class, "body_background") %>
 
-  <%= render partial: '/sessions/form' %>
+<div id="clearance" class="sign-in">
+ <!--  <h2><%= t(".title") %></h2> -->
+
+  <%= render partial: '/sessions/form' %> 
 
 </div>

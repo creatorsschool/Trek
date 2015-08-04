@@ -14,44 +14,83 @@
  *= require_self
  */
 
-.login-signup-container{
-  display: -webkit-flex;
+  .button, html input[type="button"], input[type="reset"], input[type="submit"]{
+    background-color: transparent;
+    border:none;
+    outline: none
+  }
+
+  .body_background{
+
+  }
+
+  .sign_up-login-page{
+    background-color: transparent;
+    border:none;
+    outline: none
+  }
+
+  .app_name-login-page{
+    display: flex;
+   display: -webkit-flex;
    display: flex;
-   -webkit-flex-direction: row;
-   flex-direction: row;
-   -webkit-justify-content: flex-start;
-   justify-content: flex-start;
-   margin-top: 40px;
-}
-
-.signup-container{
-  margin-left: 890px;
-}
-
-.login-container{
-  margin-left: 50px;
-}
-
-.aplication-name{
-  display: -webkit-flex;
-   display: flex;
-   -webkit-flex-direction: row /* works with row or column */
-   flex-direction: row;
+   flex-direction: column;
    -webkit-align-items: center;
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
-  color: #ee6e73;
-  margin-top: 200px;
+   margin-top: 200px;
+  }
 
+  .app_name-login-page p{
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .app_name-login-page h1{
+    font-size: 50px;
+    margin-bottom: -20px;
+  }
+
+.login-signup-container{
+   display: flex;
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   background-color: beige;
+   width: 300px;
+   margin-top: 200px;
+   margin-left: 70px; 
+   
 }
+
 
 .modal .modal-footer {
   width: 60%;
 }
 
-body{
+body {
   background-color: white;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+#main-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#hidden-footer {
+  opacity: 0;
 }
 
 .search-container {
@@ -140,4 +179,8 @@ input[type=text].valid.search {
   right: 0;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+}
+
+footer.page-footer {
+  padding-top: 0px;
 }
