@@ -183,4 +183,5 @@ input[type=text].valid.search {
 
 footer.page-footer {
   padding-top: 0px;
+  z-index: 999; 
 }
