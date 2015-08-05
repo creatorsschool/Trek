@@ -6,6 +6,9 @@ $(document).ready(function(){
 	$('#searchButton').on('click', function(event) {
     event.preventDefault();
 		$('#searchInput').slideToggle();
+      $( "#searchButton" ).click(function() {
+      $( "#icon_prefix" ).focus();
+      });
 	});
 
 	$("#clearSearch").on('click', function(){
