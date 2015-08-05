@@ -3,7 +3,8 @@ $(document).ready(function(){
 
 	$(".button-collapse").sideNav();
 
-	$('#searchButton').on('click', function() {
+	$('#searchButton').on('click', function(event) {
+    event.preventDefault();
 		$('#searchInput').slideToggle();
 	});
 

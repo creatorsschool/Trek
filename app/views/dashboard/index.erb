@@ -1,5 +1,5 @@
 <button>
-    <%= link_to "New Project", new_project_path %>
+  <%= link_to "New Project", new_project_path %>
 </button>
 
 <div class="row">
@@ -8,67 +8,65 @@
       <h3>Project List:</h3>
       <div class="collection list-projects">
         <% @projects.each do |project| %>
-          <%= link_to project.name, project_path(project), class: "collection-item" %>
+        <%= link_to project.name, project_path(project), class: "collection-item" %>
         <% end %>
       </div>
     </div>  
   </div>
 </div>
 
+<%= render partial: '/dashboard/cards' %>
 
+<h1>**********************************************</h1>
 
-
-<!-- ***************************************************** -->
 
 <ul class="list-groups">
-        <% @groups.each do |group| %>
-        <li>
-            <%= link_to group.name, group_path(group) %>
-            <%= link_to 'Delete', group_path(group), :method => :delete %>
-            <%= link_to 'Edit',edit_group_path(group) %>
-        <% end %>
-    </ul>
+  <% @groups.each do |group| %>
+  <li>
+    <%= link_to group.name, group_path(group) %>
+    <%= link_to 'Delete', group_path(group), :method => :delete %>
+    <%= link_to 'Edit',edit_group_path(group) %>
+    <% end %>
+  </ul>
 
-<div id="modal1" class="modal">
+  <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>New Project</h4>
-        <p>A bunch of text</p>
+      <h4>New Project</h4>
+      <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
-</div>
+  </div>
 
-<h1>Home Page</h1>
-
-<div class="newTask">
+  <div class="newTask">
     <button>
-        <%= link_to 'New task', new_task_path %>
+      <%= link_to 'New task', new_task_path %>
     </button>
-    
-</div>
+
+  </div>
 
 
 
-<div class="new_user">
-  <a href='/user/new'><button>New User</button></a>
-</div>
+  <div class="new_user">
+    <a href='/user/new'><button>New User</button></a>
+  </div>
 
-<div class="new_group">
-  <button><%= link_to 'New group', new_group_path %></button>
+  <div class="new_group">
+    <button><%= link_to 'New group', new_group_path %></button>
 
-<% @tasks.each do |task| %>
+    <% @tasks.each do |task| %>
     <ul>
-        <li>
-            <%= task.field %>
-            <%= task.status %>
-            <%= link_to 'Toggle', toggle_task_path(task), method: :put %>
-            <%= link_to 'Edit', edit_task_path(task) %>
-            <%= link_to 'Destroy', task_path(task), method: :delete %>
-        </li>
+      <li>
+        <%= task.field %>
+        <%= task.status %>
+        <%= link_to 'Toggle', toggle_task_path(task), method: :put %>
+        <%= link_to 'Edit', edit_task_path(task) %>
+        <%= link_to 'Destroy', task_path(task), method: :delete %>
+      </li>
     </ul>
-<% end %>
+    <% end %>
 
 
-</div>
+  </div>
 
