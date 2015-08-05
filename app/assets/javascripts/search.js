@@ -1,11 +1,13 @@
 $(document).ready(function(){
-	$('.modal-trigger').leanModal();
-
-	$(".button-collapse").sideNav();
-
 	$('#searchButton').on('click', function(event) {
-    event.preventDefault();
+		event.preventDefault
 		$('#searchInput').slideToggle();
+	});
+
+	$('html').on('click', function(e) {
+		if ($.contains(!$('#searchInput'), e.target)) {
+			$('#searchInput').slideUp();
+		}
 	});
 
 	$("#clearSearch").on('click', function(){
