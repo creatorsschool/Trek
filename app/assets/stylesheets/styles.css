@@ -8,14 +8,8 @@
 
   }
 
-  .sign_up-login-page{
-    background-color: transparent;
-    border:none;
-    outline: none
-  }
-
-  .app_name-login-page{
-    display: flex;
+.reset-email-container{
+  display: flex;
    display: -webkit-flex;
    display: flex;
    flex-direction: column;
@@ -23,18 +17,56 @@
    align-items: center;
    -webkit-justify-content: center;
    justify-content: center;
+   width: 300px;
    margin-top: 200px;
-  }
+   margin-top: 40%;
+}
 
-  .app_name-login-page p{
-    font-size: 50px;
-    font-weight: bold;
-  }
 
-  .app_name-login-page h1{
-    font-size: 50px;
-    margin-bottom: -20px;
-  }
+.password-reset-description{
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 40%;
+}
+
+.reset-password-button{
+  margin-left: 50px;
+}
+
+
+.sign_up-login-page{
+  background-color: transparent;
+  border:none;
+  outline: none
+}
+
+.app_name-login-page{
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.app_name-login-page p{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.app_name-login-page h1{
+  font-size: 50px;
+  margin-bottom: -20px;
+}
 
 .login-signup-container{
    display: flex;
@@ -47,10 +79,9 @@
    justify-content: center;
    width: 300px;
    margin-top: 200px;
-   margin-left: 70px; 
+   margin-left: 60px; 
    
 }
-
 
 .modal .modal-footer {
   width: 60%;
