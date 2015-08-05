@@ -24,6 +24,36 @@
   
   }
 
+  .reset-email-container{
+    display: flex;
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   width: 300px;
+   margin-top: 200px;
+   margin-top: 40%;
+  }
+
+  .password-reset-description{
+    display: flex;
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   margin-top: 40%;
+  }
+
+  .reset-password-button{
+    margin-left: 50px;
+  }
+
   .sign_up-login-page{
     background-color: transparent;
     border:none;
