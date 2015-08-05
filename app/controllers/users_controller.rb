@@ -5,9 +5,7 @@ class UsersController < Clearance::UsersController
     end
   end
   def edit
-    @user = User.find do |user|
-      user.id == params[:id].to_i
-    end
+    @user = User.find params[:id]
   end
   def update
     User.update(params[:id],
