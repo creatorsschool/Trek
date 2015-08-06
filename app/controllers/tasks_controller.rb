@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
- 
+
 	def new
     group = Group.find(params[:group_id])
     @task = group.tasks.build
   end
- 
+
 	def create
 		Task.create(task_params)
 		redirect_to dashboard_path
@@ -12,13 +12,13 @@ class TasksController < ApplicationController
 
 	def edit
 		@task = Task.find(params[:id].to_i)
-  	end
- 
+	end
+
 	def update
 		Task.find(params[:id].to_i).update(task_params)
 		redirect_to dashboard_path
 	end
- 
+
 	def destroy
     	Task.find(params[:id].to_i).destroy
     	redirect_to dashboard_path
@@ -27,10 +27,10 @@ class TasksController < ApplicationController
   def toggle
   	task = Task.find(params[:id].to_i)
   	task.status = !task.status
-  	task.save	
+  	task.save
   	redirect_to dashboard_path
   end
- 
+
 	private
 
     def task_params

@@ -136,7 +136,7 @@ html {
   color:white;
 }
 
-input[type=text]:focus:not([readonly]),
+#search-input input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]),
 input[type=url]:focus:not([readonly]),
@@ -151,12 +151,12 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 #FFFFFF;
 }
 
-.input-field .prefix.active ~ input[type=text] {
+#search-input.input-field .prefix.active ~ input[type=text] {
   border-bottom: 1px solid #FFFFFF;
   box-shadow: 0 1px 0 0 #FFFFFF;
 }
 
-input[type=text],
+#search-input input[type=text],
 input[type=password],
 input[type=email],
 input[type=url],
@@ -312,4 +312,50 @@ header span.user-name {
 .media-round {
   border-radius: 50%;
   border: 2px solid #fff;
+}
+
+.user-panel {
+  background: #fff;
+  transition: box-shadow .25s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.user-panel:first-child {
+  border:0px;
+}
+
+.user-panel-header {
+  background-color: #ee6e73;
+  color: #ffffff;
+  font-size: 18px;
+  border-bottom: 1px solid #e53935;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+}
+
+.user-panel-body {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+}
+
+.user-panel-footer {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+  text-align: right;
+}
+
+.user-panel-header +.user-panel-body {
+  border-top:0;
+}
+
+.container .user-panel {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
