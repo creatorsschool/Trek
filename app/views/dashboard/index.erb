@@ -2,11 +2,39 @@
   <%= link_to "New Project", new_project_path, class: "waves-effect waves-light btn" %>
 </button>
 
+<div class="collection list-projects">
+
+<div class="js-search-results">
+  <div class="container">
+    <div class="list-results">
+      <div class="column-centered">
+        <ol class="list-view">
+          <li class="list-project">
+            <div class="project-search">
+              <h2 class="search-title">Enter your search above</h2>
+            </div>
+            <div class="project-search-results">
+              <div class="media-round user-project-image">
+                <img src="https://a2.muscache.com/defaults/user_pic-50x50.png?v=2" alt="">
+              </div>
+              <ul>
+                <li><a href="#"><span class="project-name"> Teste</span></a></li>
+                <li><span class="project-owner">by <b>Owner Name</b></span></li>
+                <li><span class="project-description">project</span></li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row">
   <div class="col s6 offset-s3">
-    <h3>Project List:</h3>
-
-    <div class="collection list-projects">
+    <div>
+      <h3>Project List:</h3>
+      <div id="projects-list" class="collection list-projects">
 
         <% @projects.each do |project| %>
           <%= link_to project_groups_path(project), class: 'collection-item' do %>
@@ -23,3 +51,34 @@
   </div>
 </div>
 
+<div id="modal1" class="modal">
+
+  <div class="modal-content">
+    <h4>New Project</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right:24px;">
+  <a class="btn-floating btn-large red">
+    <i class="material-icons">chat_bubble_outline</i>
+  </a>
+  <ul class="list-users">
+    <% unless @list_groups.empty? %>
+      <% @list_groups.each do |group| %>
+        <% group.users.all.each do |user| %>
+            <li>
+              <% if user.first_name.downcase != current_user.first_name.downcase %> 
+                  <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
+                      <i class="name_user"><%= user.first_name %></i>   
+                  </a>
+              <% end %>
+            </li>
+        <% end %>
+      <%end%>
+    <% end %>
+  </ul>
+</div>

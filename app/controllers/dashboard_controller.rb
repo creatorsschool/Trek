@@ -1,13 +1,10 @@
 class DashboardController < ApplicationController
   def index
-    if params[:search]
-      @projects = Project.where("name LIKE ? ", "%#{params[:search]}%")
-    else
-      @projects = Project.all
-    end
+    @projects = Project.all
     @users = User.all
     @groups = Group.all
     @tasks = Task.all
     @project = Project.new
+    @list_groups = current_user.groups.all
   end
 end

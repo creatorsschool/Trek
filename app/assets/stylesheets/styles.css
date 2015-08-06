@@ -4,22 +4,47 @@
     outline: none
 }
 
-.body_background{
+.task-new-edit-container{
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+  margin-left: 350px;
+  margin-bottom: 149px;
+  margin-top: 150px;
+}
 
+.button-edit-task{
+  margin-left: 65px;
+}
+
+.button, html input[type="button"], input[type="reset"], input[type="submit"]{
+  background-color: transparent;
+  border:none;
+  outline: none
+}
+
+.body_background{
 }
 
 .reset-email-container{
   display: flex;
-   display: -webkit-flex;
-   display: flex;
-   flex-direction: column;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   width: 300px;
-   margin-top: 200px;
-   margin-top: 40%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 300px;
+  margin-top: 200px;
+  margin-top: 40%;
 }
 
 
@@ -69,18 +94,18 @@
 }
 
 .login-signup-container{
-   display: flex;
-   display: -webkit-flex;
-   display: flex;
-   flex-direction: column;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   width: 300px;
-   margin-top: 200px;
-   margin-left: 60px; 
-   
+ display: flex;
+ display: -webkit-flex;
+ display: flex;
+ flex-direction: column;
+ -webkit-align-items: center;
+ align-items: center;
+ -webkit-justify-content: center;
+ justify-content: center;
+ width: 300px;
+ margin-top: 200px;
+ margin-left: 60px;
+
 }
 
 .modal .modal-footer {
@@ -104,7 +129,7 @@ html {
 .search-header {
   max-height: 720px;
   overflow: hidden;
-    padding: 96px 0 64px;
+  padding: 96px 0 64px;
 }
 
 .input-field .prefix.active {
@@ -190,4 +215,101 @@ input[type=text].valid.search {
 
 footer.page-footer {
   padding-top: 0;
+}
+
+
+.list-results {
+  background: #fff;
+  transition: box-shadow .25s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.list-results .column-centered {
+  width: 760px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-view {
+  padding: 64px 0 128px;
+  display: table;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+}
+
+.search-title {
+  display: block;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.33333;
+  margin: 0;
+  margin: 0;
+}
+
+header .user-profile-image {
+  bottom: 13px;
+  left: 0;
+    -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+header .user-profile-image {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAABGlBMV…ugGumbEqe42dVUw%2Fvm45T8MaY6Cc06%2BKUsUqrV32DAT5P3H1sQsWyjAAAAAElFTkSuQmCC) 0 0 no-repeat;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+}
+
+header .user-profile-image img {
+  vertical-align: top;
+  width: 40px;
+  height: 40px;
+}
+
+header span.user-name {
+  margin-left: 5px;
+}
+
+.project-search-results ul {
+  float:left;
+  margin-left: 25px;
+}
+
+.project-search-results {
+  width: 100%;
+  padding: 25px 0 39px;
+  display: inline-block;
+}
+
+.project-search-results .user-project-image {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAABGlBMV…ugGumbEqe42dVUw%2Fvm45T8MaY6Cc06%2BKUsUqrV32DAT5P3H1sQsWyjAAAAAElFTkSuQmCC) 0 0 no-repeat;
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  float:left;
+}
+.project-search-results .user-project-image {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+
+.project-search-results .user-project-image img {
+  width: 76px;
+  height: 76px;
+}
+
+.media-round {
+  border-radius: 50%;
+  border: 2px solid #fff;
 }

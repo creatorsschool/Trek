@@ -1,9 +1,7 @@
 class ProjectsController < ApplicationController
-
   def new
-    @project = Project.new 
+    @project = Project.new
   end
-
   def create
     @project = Project.create ({
       name: params[:project][:name],
@@ -11,11 +9,9 @@ class ProjectsController < ApplicationController
       })
     redirect_to dashboard_path
   end
-
   def edit
     @project = Project.find params[:id]
   end
-
   def update
     @project = Project.find params[:id]
     @project.update({
@@ -24,15 +20,20 @@ class ProjectsController < ApplicationController
       })
     redirect_to dashboard_path
   end
-
   def destroy
     @project = Project.find params[:id]
     @project.destroy
     redirect_to dashboard_path
   end
-
   def show
     @project = Project.find params[:id]
   end
-
+  def search
+    if !params[:search].blank?
+      @projects = Project.where('name LIKE ?', "%#{params[:search]}%")
+    else
+      @projects = []
+    end
+    render json: @projects
+  end
 end

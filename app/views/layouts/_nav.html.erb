@@ -3,20 +3,26 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-
         <ul class="left hide-on-med-and-down">
           <li>
             <a class="dropdown-button" data-activates="dropdown1" href="#!">
-              <i class="material-icons left">perm_identity</i>
+              <div class="media-round user-profile-image">
+                <img src="https://a2.muscache.com/defaults/user_pic-50x50.png?v=2" alt="">
+              </div>
               <% if signed_in? %>
-              <span>Hello, <%= current_user.first_name %> <%= current_user.last_name %></span>
+              <span class="user-name"><%= current_user.first_name %></span>
               <% end %>
               <i class="material-icons right">arrow_drop_down</i>
             </a>
             <ul id="dropdown1" class="dropdown-content">
               <li><%= link_to 'Edit', edit_user_path(:id) %></li>
               <li class="divider"></li>
-              <li><%= link_to 'Logout', sign_out_path, method: :delete %></li>
+              <li>
+                <%= link_to sign_out_path, method: :delete do %>
+                Logout
+                <i class="material-icons right">power_settings_new</i>
+                <% end %>
+              </li>
             </ul>
           </li>
         </ul>

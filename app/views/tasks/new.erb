@@ -1,11 +1,19 @@
-<%= form_for @task, url: tasks_path do |f| %>
-  <%= f.hidden_field :group_id %>
-  <p>
-    <%= f.label :field %><br>
-    <%= f.text_field :field %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="col s6">
+	<div class="task-new-edit-container">
+		<%= form_for @task, url: tasks_path do |f| %>
+      <%= f.hidden_field :group_id %>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field">
+						<i class="material-icons prefix">assignment</i>
+						<%= f.text_field :field %>
+						<%= f.label :field %>
+					</div>
+				</div>
+			</div>
+			<div class="button-edit-task">
+				<a class="waves-effect waves-light btn"><%= f.submit %></a>
+			</div>
+		<% end %>
+	</div>
+</div>
