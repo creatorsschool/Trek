@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
  
 	def new
-  	end
+    group = Group.find(params[:group_id])
+    @task = group.tasks.build
+  end
  
 	def create
 		Task.new(task_params).save
@@ -32,6 +34,6 @@ class TasksController < ApplicationController
 	private
 
     def task_params
-    	params.require(:task).permit(:field)
+    	params.require(:task).permit(:field, :group_id)
     end
 end

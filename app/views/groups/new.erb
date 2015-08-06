@@ -1,6 +1,6 @@
 <div class="form-create_groups">
 	<h3>Create new group</h3>
-	<%= form_for @group do |f| %>
+	<%= form_for [@project, @group] do |f| %>
 	<%= f.label :name %>:
 	<%= f.text_field :name %><br />
 	<%= f.label :description %>:

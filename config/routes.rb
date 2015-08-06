@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resource :password, controller: 'clearance/passwords', only: [:create, :edit, :update]
   end
 
-  resources :groups
-  resources :projects
+  resources :projects do
+    resources :groups
+  end
+
   resources :tasks do
   	member do
   		put :toggle
