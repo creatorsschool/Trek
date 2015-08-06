@@ -24,3 +24,5 @@ gem 'clearance'
 gem 'cancancan'
 
 gem 'pry-rails', :group => :development
+
+gem "letter_opener", :group => :development
