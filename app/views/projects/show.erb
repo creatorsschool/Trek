@@ -1,11 +1,12 @@
 <h1>Project Show</h1>
 
 <div>
-  Name:
-  <p></p>
-  <%= @project.name %>
-  <p></p>
-  Description:
-  <p></p>
-  <%= @project.description %>
+  Name:<br>
+  <%= @project.name %><br>
+  Description:<br>
+  <%= @project.description %><br>
+
+  <button><%= link_to "Remove", project_path(@project), method: :delete%></button>
+  <button><%= link_to "Edit", edit_project_path(@project) %></button>
+
 </div>

@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Trek</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Trek</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
+<body>
 
-      <% if signed_in? %>
-        Signed in as: <%= current_user.first_name %> <%= current_user.last_name %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign in', sign_in_path %>
-      <% end %>
+  <%= render "layouts/nav" %>
+  <%= render "layouts/search" %>
 
-    <div id="flash">
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>">
-          <%= value %>
-        </div>
-      <% end %>
+  <div id="flash">
+    <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <h4>New Project</h4>
+      <%= render "/projects/new" %>
     </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>
+    </div>
+  </div>
 
-    <%= yield %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield %>
+  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-  </body>
+
+  <%= render "layouts/footer" %>
+
+</body>
 </html>

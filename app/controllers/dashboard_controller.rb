@@ -9,5 +9,6 @@ class DashboardController < ApplicationController
     @users = User.all
     @groups = Group.all
     @tasks = Task.all
+    @project = Project.new
   end
 end

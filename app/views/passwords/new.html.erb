@@ -1,16 +1,22 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
-
-  <p><%= t(".description") %></p>
-
-  <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
+<div class="row">
+<div class="col s6">
+      <div class="password-reset-description">
+        <h1>Password reset</h1>
+        <p>Please insert your email to reset your password</p>
+      </div>
+    </div>
+<div class="col s6">
+<div class="reset-email-container">
+ <form class="col s12">
+  <div class="row">
+    <div class="input-field">
+      <i class="material-icons prefix">email</i>
+       <%= form_for :password, url: passwords_path do |form| %>
       <%= form.label :email %>
       <%= form.text_field :email, type: 'email' %>
+      <div class="reset-password-button">
+      <a class="waves-effect waves-light btn"><%= form.submit class: "form-submit-button-reset-password" %></a>
+      </div>
+      <% end %>
     </div>
-
-    <div class="submit-field">
-      <%= form.submit %>
     </div>
-  <% end %>
-</div>
