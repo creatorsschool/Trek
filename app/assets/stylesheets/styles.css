@@ -359,3 +359,39 @@ header span.user-name {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+.profile-background-container {
+  display: inline-block;
+  position: relative;
+}
+
+.media-photo {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  background-color: #cacccd;
+}
+
+.profile-picture {
+  position: absolute;
+  top: 0;
+  left: auto;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+
+.profile-picture, .media-photo img {
+  width: 410px;
+  height: 410px;
+  vertical-align: middle;
+}
+
+.profile-background-container .media-round img {
+  width: 410px;
+  height: 410px;
+  border-width: 0;
+}

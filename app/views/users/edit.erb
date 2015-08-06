@@ -1,27 +1,41 @@
 <div class="container">
   <div class="user-panel">
     <%= form_for @user do |f| %>
-      <div class="user-panel-header">
-        Edit User
-      </div>
-      <div class="user-panel-body">
-          <div class="row">
-            <div class="col s6">
-              sss
+    <div class="user-panel-header">
+      Edit User
+    </div>
+    <div class="user-panel-body">
+      <div class="row">
+        <div class="col s6 center-align">
+          <div class="profile-background-container">
+            <div class="media-photo profile-picture">
+              <img src="https://a2.muscache.com/defaults/user_pic-225x225.png?v=2">
             </div>
-            <div class="col s6">
-              <div class="row">
-                <div class="col s12">
-                  <%= f.label :first_name %>
-                  <%= f.text_field :first_name %>
-                </div>
+            <div class="media-photo media-round">
+              <img src="https://a2.muscache.com/defaults/user_pic-225x225.png?v=2">
+            </div>
+          </div>
+          <form action="#">
+            <div class="file-field input-field">
+              <input class="file-path validate" type="text"/>
+              <div class="btn">
+                <span>File</span>
+                <input type="file" />
               </div>
-              <div class="row">
-                <div class="col s12">
-                  <%= f.label :last_name %>
-                  <%= f.text_field :last_name %>
-                </div>
-              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col s6">
+          <div class="row">
+            <div class="col s12">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name %>
             </div>
           </div>
           <div class="row">
@@ -36,17 +50,13 @@
               <%= f.text_field :encrypted_password %>
             </div>
           </div>
-          <div class="row">
-            <div class="col s12">
-              <%= f.label :confirmpassword %>
-              <%= f.text_field :encrypted_password %>
-            </div>
-          </div>
+        </div>
       </div>
-      <div class="user-panel-footer">
-        <a href="#" class="waves-effect waves-light btn"><i class="material-icons left">replay</i>Back</a>
-        <%= f.button 'SAVE', class: 'waves-effect waves-light btn' %>
-      </div>
+    </div>
+    <div class="user-panel-footer">
+      <a href="#" class="waves-effect waves-light btn"><i class="material-icons left">replay</i>Back</a>
+      <%= f.button 'SAVE', class: 'waves-effect waves-light btn' %>
+    </div>
     <% end %>
   </div>
 </div>
