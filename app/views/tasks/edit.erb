@@ -1,10 +1,20 @@
-<%= form_for :task, url: task_path(@task), method: :patch do |f| %>
-  <p>
-    <%= f.label :field %><br>
-    <%= f.text_field :field %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
+<div class="col s6">
+	<div class="task-edit-container">
+		<%= form_for :task, url: task_path(@task), method: :patch do |f| %>
+		<div class="col s12">
+			<div class="row">
+				<div class="input-field">
+					<i class="material-icons prefix">assignment</i>
+					<%= f.text_field :field %>
+					<%= f.label :field %>
+				</div>
+			</div>
+		</div>
+		<div class="button-edit-task">
+			<a class="waves-effect waves-light btn"><%= f.submit %></a>
+		</div>
+		<% end %>
+	</div>
+</div>
+
