@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
  
 	def new
+    group = Group.find(params[:group_id])
+    @task = group.tasks.build
   end
  
 	def create
-		Task.new({field: params[:task][:field],
-      user_id: current_user.id}).save
+		Task.create(task_params)
 		redirect_to dashboard_path
 	end
 
@@ -30,4 +31,9 @@ class TasksController < ApplicationController
   	redirect_to dashboard_path
   end
  
+	private
+
+    def task_params
+    	params.require(:task).permit(:field, :group_id).merge(user_id: current_user.id)
+    end
 end

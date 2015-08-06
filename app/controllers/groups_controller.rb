@@ -1,10 +1,13 @@
 class GroupsController < ApplicationController
 
   def new
+    @project = Project.find(params[:project_id])
   	@group = Group.new
   end
 
   def create
+    @project = Project.find(params[:project_id])
+  	@project.groups.create(group_params)
     group = Group.create(group_params)
     list_users = User.where(id: params[:group][:user_ids])
     group.users << list_users 
@@ -16,6 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:project_id])
   	@group = Group.find(params[:id])
   end
 
@@ -27,6 +31,11 @@ class GroupsController < ApplicationController
   def destroy
   	Group.find(params[:id].to_i).destroy
   	redirect_to dashboard_path
+  end
+
+  def index
+    @project = Project.find(params[:project_id])
+    @groups = @project.groups 
   end
 
   private

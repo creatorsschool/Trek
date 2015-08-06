@@ -1,3 +1,9 @@
+.button, html input[type="button"], input[type="reset"], input[type="submit"]{
+    background-color: transparent;
+    border:none;
+    outline: none
+}
+
 .task-new-edit-container{
   display: flex;
   display: -webkit-flex;
@@ -25,7 +31,6 @@
 }
 
 .body_background{
-
 }
 
 .reset-email-container{

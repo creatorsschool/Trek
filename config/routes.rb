@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     resources :instant_messages, only: [:create, :index]
   end
 
-  # resources :instant_messages
-  resources :groups
-  resources :projects
+  resources :projects do
+    resources :groups
+  end
   resources :tasks do
   	member do
   		put :toggle
