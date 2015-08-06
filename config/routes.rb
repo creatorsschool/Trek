@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, controller: 'users' do
     resource :password, controller: 'clearance/passwords', only: [:create, :edit, :update]
+    resources :instant_messages, only: [:create, :index]
   end
 
+  # resources :instant_messages
   resources :groups
   resources :projects
   resources :tasks do

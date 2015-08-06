@@ -1,4 +1,4 @@
 class UserGroup < ActiveRecord::Base
-	has_many :groups
-	has_many :users
+	belongs_to :group
+	belongs_to :user
 end

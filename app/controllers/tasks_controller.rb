@@ -1,10 +1,11 @@
 class TasksController < ApplicationController
  
 	def new
-  	end
+  end
  
 	def create
-		Task.new(task_params).save
+		Task.new({field: params[:task][:field],
+      user_id: current_user.id}).save
 		redirect_to dashboard_path
 	end
 
@@ -22,16 +23,11 @@ class TasksController < ApplicationController
     	redirect_to dashboard_path
   	end
 
-  	def toggle
-  		task = Task.find(params[:id].to_i)
-  		task.status = !task.status
-  		task.save	
-  		redirect_to dashboard_path
-  	end
+  def toggle
+  	task = Task.find(params[:id].to_i)
+  	task.status = !task.status
+  	task.save	
+  	redirect_to dashboard_path
+  end
  
-	private
-
-    def task_params
-    	params.require(:task).permit(:field)
-    end
 end
