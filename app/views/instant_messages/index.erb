@@ -1,4 +1,4 @@
-<section class='chat-container' style="border: 1px solid black; width:20em; height:35em; background-color:grey;">
+<section class='chat-container'>
   <header class="top-header" style="width:20em; height:3em; background-color:green;">
     <div class="header-left">
       <span>
@@ -12,32 +12,36 @@
       </button>
     </div>
   </header>
-  <div>
-  <% @messages.each do |m| %>
-    <% if m.user_id_sent == current_user.id %>
-      <div>
-        <p class="left-align">
-          <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;"/>
-           <%= m.text %>
-        </p>
-      </div>
-    <% else %>
-      <div>
-        <p class="right-align">
-          <%= m.text %>
-          <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;"/>
-        </p>
-      </div>
-    <% end %>
-  <% end%>
-</div>
-  <div class="container-form" style="border:2px solid blue; position:fixed;">
+    <ol class="discussion">
+      <% @messages.each do |m| %>
+      <% if m.user_id_sent == current_user.id %>
+        <li class="self">
+          <div class="img_user">
+            <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
+          </div>
+          <div class="messages">
+            <p><%= m.text %></p>
+            <time datetime="<%= m.time%>">51 min</time>
+          </div>
+        </li>
+      <% else %>
+        <li class="other">
+          <div class="img_user">
+            <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
+          </div>
+          <div class="messages">
+            <p><%= m.text %></p>
+            <time datetime="<%= m.time%>"><%= @user_name_received.first_name%> • 51 min</time>
+          </div>
+        </li>
+      <% end %>
+    <%end%>
+    </ol>
+    <div class="container-form" style="border:2px solid blue; position:fixed; background-color:white; width:20em; height:5em;">
     <%= form_for :instant_message, url: user_instant_messages_path({user_id: @user_id_received}), method: :post do |f| %>
       <p>
-        <%= f.text_field :text%>
+        <%= f.text_field :text, placeholder: 'send one mensage' %>
       </p>
     <% end %>
   </div>
 </section>
-
-
