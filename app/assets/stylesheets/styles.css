@@ -1,0 +1,193 @@
+ .button, html input[type="button"], input[type="reset"], input[type="submit"]{
+    background-color: transparent;
+    border:none;
+    outline: none
+  }
+
+  .body_background{
+
+  }
+
+.reset-email-container{
+  display: flex;
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   width: 300px;
+   margin-top: 200px;
+   margin-top: 40%;
+}
+
+
+.password-reset-description{
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 40%;
+}
+
+.reset-password-button{
+  margin-left: 50px;
+}
+
+
+.sign_up-login-page{
+  background-color: transparent;
+  border:none;
+  outline: none
+}
+
+.app_name-login-page{
+  display: flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.app_name-login-page p{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.app_name-login-page h1{
+  font-size: 50px;
+  margin-bottom: -20px;
+}
+
+.login-signup-container{
+   display: flex;
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+   width: 300px;
+   margin-top: 200px;
+   margin-left: 60px; 
+   
+}
+
+.modal .modal-footer {
+  width: 60%;
+}
+
+body {
+  background-color: white;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.search-container {
+  color: #fff;
+  background-color: #ee6e73;
+}
+
+.search-header {
+  max-height: 720px;
+  overflow: hidden;
+    padding: 96px 0 64px;
+}
+
+.input-field .prefix.active {
+  color:white;
+}
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px 0 0 #FFFFFF;
+}
+
+.input-field .prefix.active ~ input[type=text] {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px 0 0 #FFFFFF;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea.materialize-textarea {
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.search-field {
+  position: relative;
+  display: block;
+  font-weight: 300;
+  font-size: 30px;
+  margin: 0;
+}
+
+.search-field .input-field .clear-search {
+  position: absolute;
+  right: -9999px;
+  top: 0px;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+}
+
+.search-field .input-field .clear-search i {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+}
+
+input[type=text].valid.search {
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.search-field .prefix.active ~ .clear-search {
+  right: 0;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.task-button {
+  padding: 0;
+}
+
+footer.page-footer {
+  padding-top: 0;
+}
