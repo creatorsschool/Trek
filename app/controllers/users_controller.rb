@@ -5,7 +5,7 @@ class UsersController < Clearance::UsersController
     end
   end
   def edit
-    @user = User.find params[:id]
+    @user = User.find(params[:id])
   end
   def update
     User.update(params[:id],
