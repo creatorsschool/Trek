@@ -15,7 +15,7 @@
               <i class="material-icons right">arrow_drop_down</i>
             </a>
             <ul id="dropdown1" class="dropdown-content">
-              <li><%= link_to 'Edit', edit_user_path(:id) %></li>
+              <li><%= link_to 'Edit', edit_user_path(current_user.id) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to sign_out_path, method: :delete do %>
@@ -26,7 +26,7 @@
             </ul>
           </li>
         </ul>
-        <a href="#!" class="brand-logo center">Trek</a>
+        <%= link_to 'Trek', dashboard_path , class: "brand-logo center" %></li>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li>
