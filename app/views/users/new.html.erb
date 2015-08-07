@@ -16,22 +16,22 @@
             <div class="input-field">
               <i class="material-icons prefix">F</i>
               <%= form.label :first_name %>
-              <%= form.text_field :first_name %>
+              <%= form.text_field :first_name, class: "validate" %>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">L</i>
               <%= form.label :last_name %>
-              <%= form.text_field :last_name %>
+              <%= form.text_field :last_name, class: "validate" %>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">email</i>
               <%= form.label :email %>
-              <%= form.text_field :email, type: 'email' %>
+              <%= form.text_field :email, type: 'email', class: "validate" %>
             </div>
             <div class="input-field">
               <i class="material-icons prefix">lock_outline</i>
               <%= form.label :password %>
-              <%= form.password_field :password %>
+              <%= form.password_field :password, class: "validate" %>
             </div>
           </div>
         </form>
