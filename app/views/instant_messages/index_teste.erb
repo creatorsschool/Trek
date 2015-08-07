@@ -7,10 +7,7 @@
       </span>
     </div>
     <div class="header-right">
-      <button class="minimize" type="button">
-        <i class="small material-icons">add</i>
-      </button>
-      <button class="close-chat" type="button">
+      <button class="close-chat" type="button" style="background-color:green; border-color:green; margin-left: 200px; margin-top: -40px;">
         <i class="small material-icons">close</i>
       </button>
     </div>
@@ -19,7 +16,7 @@
       <% @messages.each do |m| %>
       <% if m.user_id_sent == current_user.id %>
         <li class="user">
-          <div class="img_current-user">
+          <div class="img_user">
             <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
           </div>
           <div class="messages">
@@ -29,7 +26,7 @@
         </li>
       <% else %>
         <li class="user">
-          <div class="img_user-received">
+          <div class="img_user">
             <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
           </div>
           <div class="messages">
@@ -39,6 +36,7 @@
         </li>
       <% end %>
     <%end%>
+    </ol>
     <div class="container-form" style="border:2px solid blue; position:fixed; background-color:white; width:20em; height:5em;">
     <%= form_for :instant_message, url: user_instant_messages_path({user_id: @user_id_received}), method: :post do |f| %>
       <p>
@@ -46,5 +44,4 @@
       </p>
     <% end %>
   </div>
-    </ol>
 </section>
