@@ -8,17 +8,14 @@ class UsersController < Clearance::UsersController
     @user = User.find(params[:id])
   end
   def update
-    User.update(params[:id],
-    first_name: params[:first_name],
-    last_name: params[:last_name],
-    email: params[:email])
+    @user = User.update(params[:id], update_user)
     redirect_to dashboard_path
+    # redirect_to edit_user_path(current_user.id)
   end
   def destroy
     User.destroy(params[:id])
-    redirect_to dashboard_path
+    redirect_to sign_path
   end
-
   def user_from_params
     first_name = user_params.delete(:first_name)
     last_name = user_params.delete(:last_name)
@@ -31,5 +28,11 @@ class UsersController < Clearance::UsersController
       user.email = email
       user.password = password
     end
+  end
+
+  private
+
+  def update_user
+    params.require(:user).permit(:first_name, :last_name, :email , :password)
   end
 end
