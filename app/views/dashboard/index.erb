@@ -25,43 +25,48 @@
 </div>
 
 
-<div class="col s6 offset-s3">
-  <table class="bordered">
-  <div id="projects-list" class="collection list-projects">
-    <thead>
-      <tr>
-        <th>
-          <h3>Project List:</h3>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @projects.each do |project| %>
-        <td>
-          <%= link_to project_groups_path(project), class: 'collection-item' do %>
-            <%= project.name %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to project_path(project) do %>
-            <button class="btn waves-effect waves-light">Details</button>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to edit_project_path(project) do %>
-            <button class="btn waves-effect waves-light">Edit</button>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to project_path(project), method: :delete do %>
-            <button class="btn waves-effect waves-light">Delete</button>
-          <% end %>
-        </td>
-      <% end %>
-    </tbody>
+<div class="row">
+  <div class="container"
+    <div class="col s3">
+      <table class="bordered">
+        <div id="projects-list" class="collection list-projects">
+          <thead>
+            <tr>
+              <th>
+                <h3>Project List:</h3>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @projects.each do |project| %>
+              <td>
+                <%= link_to project_groups_path(project), class: 'collection-item' do %>
+                  <%= project.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to project_path(project) do %>
+                  <button class="btn waves-effect waves-light">Details</button>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_project_path(project) do %>
+                  <button class="btn waves-effect waves-light">Edit</button>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to project_path(project), method: :delete do %>
+                  <button class="btn waves-effect waves-light">Delete</button>
+                <% end %>
+              </td>
+            <% end %>
+          </tbody>
+        </div>
+      </table>
+    </div>
   </div>
-</table>
 </div>
+
 
 <div class="fixed-action-btn" style="bottom: 45px; right:24px;">
   <a class="btn-floating btn-large red">
