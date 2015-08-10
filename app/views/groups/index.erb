@@ -41,44 +41,8 @@
           </div>
 <!-- ***********CARD CONTENT TASK'S********* -->
           <% if !group.tasks.empty? %>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Task's<i class="material-icons right">close</i></span><br>
-                <div class="listTask">
-
-                <table class="hoverable">
-                  <thead><tr><th data-field="id">To-Do:</th></tr></thead>
-                  <% group.tasks.each do |task| %>
-                    <% if task.status == false %>
-                    <tbody>
-                      <tr>
-                        <td><%= task.field %></td>
-                        <td><%= link_to 'Done', toggle_task_path(task), method: :put %></td>
-                        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-                      </tr>
-                    </tbody>
-                    <% end %>
-                  <% end %>
-                </table><br>
-
-                <table class="hoverable">
-                  <thead><tr><th data-field="id">Done:</th></tr></thead>
-                  <% group.tasks.each do |task| %>
-                    <% if task.status == true %>
-                    <tbody>
-                      <tr>
-                        <td><%= task.field %></td>
-                        <td>
-                          <%= link_to task_path(task), method: :delete do %>
-                             <i class="material-icons">delete</i>
-                          <% end %>
-                        </td>
-                      </tr>
-                    </tbody>
-                    <% end %>
-                  <% end %>
-                </table><br>
-
-              </div>
+            <div id="tasks-editor" class="card-reveal">
+              <%= render "/groups/group_tasks", group: group %>
             </div>
           <% end %>
 

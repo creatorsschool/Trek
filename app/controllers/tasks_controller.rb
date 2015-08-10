@@ -22,14 +22,16 @@ class TasksController < ApplicationController
 
 	def destroy
     task = Task.find(params[:id].to_i).destroy
-    redirect_to project_groups_path({project_id: task.group.project.id})
+    @group = task.group
+    render "groups/group_tasks"
   	end
 
   def toggle
   	task = Task.find(params[:id].to_i)
   	task.status = !task.status
   	task.save
-  	redirect_to project_groups_path({project_id: task.group.project.id})
+    @group = task.group
+    render "groups/group_tasks"
   end
 
 	private
