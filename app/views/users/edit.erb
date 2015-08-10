@@ -6,7 +6,7 @@
     </div>
     <div class="user-panel-body">
       <div class="row">
-        <div class="col s6 center-align">
+        <div class="col s6">
           <div class="profile-background-container">
             <div class="media-photo profile-picture">
               <img src="https://a2.muscache.com/defaults/user_pic-225x225.png?v=2">
@@ -15,55 +15,62 @@
               <img src="https://a2.muscache.com/defaults/user_pic-225x225.png?v=2">
             </div>
           </div>
-          <form action="#">
-            <div class="file-field input-field">
-              <input class="file-path validate" type="text"/>
-              <div class="btn">
-                <span>File</span>
-                <input type="file" />
+        </div>
+        <div class="col s6">
+          <div class="col s12">
+            <div class="row">
+              <div class="col s12">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, class: "validate" %>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="row">
-          <div class="col s6">
-            <div class="col s12">
-              <div class="row">
-                <div class="col s12">
-                  <%= f.label :first_name %>
-                  <%= f.text_field :first_name, class: "validate" %>
-                </div>
+            <div class="row">
+              <div class="col s12">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, class: "validate" %>
               </div>
-              <div class="row">
-                <div class="col s12">
-                  <%= f.label :last_name %>
-                  <%= f.text_field :last_name, class: "validate" %>
-                </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.email_field :email, class: "validate" %>
+                <%= f.label :email %>
               </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <%= f.email_field :email, class: "validate" %>
-                  <%= f.label :email %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <%= f.label :password %>
-                  <%= f.password_field :encrypted_password, class: "validate"%>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "validate"%>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col s4">
+          <div class="button-upload">
+            <button class="btn waves-effect waves-light upload-button" type="submit">Upload</button>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="user-panel-footer">
-      <%= link_to dashboard_path, class: "waves-effect waves-light btn" do %>
-        Back
-        <i class="material-icons left">replay</i>
+      <%= link_to dashboard_path, class: "btn waves-effect waves-light back-button" do %>
+      Back
+      <i class="material-icons left">replay</i>
       <% end %>
-      <%= f.button 'SAVE', class: 'waves-effect waves-light btn' %>
+      <%= f.button 'SAVE', class: 'btn waves-effect waves-light' %>
     </div>
     <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="user-panel">
+    <div class="user-panel-header">
+      Cancel Account
+    </div>
+    <div class="user-panel-body">
+      <button class="btn waves-effect waves-light cancel-account-button" type="submit">Cancel Account</button>
+    </div>
   </div>
 </div>

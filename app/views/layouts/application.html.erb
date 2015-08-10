@@ -10,28 +10,19 @@
 </head>
 
 <body>
+  <main>
+    <%= render "layouts/nav" %>
 
-  <%= render "layouts/nav" %>
-  <%= render "layouts/search" %>
+    <%= render "layouts/search" %>
 
-  <%= yield %>
+    <%= yield %>
 
-  <div id="flash">
-    <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-    <% end %>
-  </div>
-
-  <div class="modal" id="modal1">
-    <div class="modal-content">
-      <h4>New Project</h4>
-      <%= render "/projects/new" %>
+    <div id="flash">
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
     </div>
-    <div class="modal-footer">
-      <a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>
-    </div>
-  </div>
-
+  </main>
   <%= render "layouts/footer" %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
