@@ -7,11 +7,10 @@ class GroupsController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
-  	@project.groups.create(group_params)
-    group = Group.create(group_params)
-    list_users = User.where(id: params[:group][:user_ids])
-    group.users << list_users 
-  	redirect_to dashboard_path
+  	group = @project.groups.build(group_params)
+    group.user_ids = params[:group][:user_ids]
+    group.save
+  	redirect_to project_groups_path
   end
 
   def show
@@ -25,12 +24,12 @@ class GroupsController < ApplicationController
 
   def update
   	Group.find(params[:id]).update(group_params)
-  	redirect_to dashboard_path
+  	redirect_to project_groups_path
   end
 
   def destroy
   	Group.find(params[:id].to_i).destroy
-  	redirect_to dashboard_path
+  	redirect_to project_groups_path
   end
 
   def index
