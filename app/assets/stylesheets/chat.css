@@ -1,3 +1,6 @@
+
+
+
 .col-md-2, .col-md-10 {
   padding: 0;
 }
@@ -17,8 +20,13 @@
   margin-left: 10px;
 }
 .chat-window > div > .panel {
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 0 0 0;
+  box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
+
 .icon_minim {
   padding: 2px 10px;
 }
@@ -32,7 +40,7 @@
 .top-bar {
   background: #666;
   color: white;
-  padding: 10px;
+  padding: 8px;
   position: relative;
   overflow: hidden;
 }
@@ -60,6 +68,7 @@
   color: #ccc;
 }
 .msg_container {
+  background: #e5e5e5;
   padding: 10px;
   overflow: hidden;
   display: flex;
@@ -117,4 +126,49 @@ img {
   position: fixed;
   left: 0px;
   bottom: 0;
+}
+
+.panel {
+  border: 0;
+}
+
+.panel-default {
+  border-color: #FFF8F8;
+}
+
+.panel-default>.panel-heading {
+  color: #888888;
+  background-color: #3c3c3c;
+  border-color: #282828;
+}
+
+.panel-heading {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.panel-footer {
+  border-top: 1px solid #DCDCDC;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.panel-footer .input-group {
+  display: flex;
+
+}
+
+.panel-footer .input-group input[type=text] {
+  border-bottom: 0;
+  height: 2.1em;
+
+}
+
+.panel-heading * a span {
+  color: #888888;
+}
+
+a:focus, a:hover {
+  color: inherit;
+  text-decoration: inherit;
 }

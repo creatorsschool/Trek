@@ -10,12 +10,12 @@ $(document).ready(function(){
       $this = $this.find('span.icon_minim');
 
     if (!$this.hasClass('panel-collapsed')) {
-      $this.parents('.panel').find('.panel-body').slideUp();
+      $this.parents('.panel').find('.panel-body').hide();
       $this.parents('.panel').find('.panel-footer').hide();
       $this.addClass('panel-collapsed');
       $this.removeClass('glyphicon-minus').addClass('glyphicon-plus');
     } else {
-      $this.parents('.panel').find('.panel-body').slideDown();
+      $this.parents('.panel').find('.panel-body').show();
       $this.parents('.panel').find('.panel-footer').show();
       $this.removeClass('panel-collapsed');
       $this.removeClass('glyphicon-plus').addClass('glyphicon-minus');
