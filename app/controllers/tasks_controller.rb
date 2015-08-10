@@ -6,8 +6,8 @@ class TasksController < ApplicationController
   end
 
 	def create
-		Task.create(task_params)
-		redirect_to dashboard_path
+		task = Task.create(task_params)
+		redirect_to project_groups_path({project_id: task.group.project.id})
 	end
 
 	def edit
@@ -15,20 +15,21 @@ class TasksController < ApplicationController
 	end
 
 	def update
-		Task.find(params[:id].to_i).update(task_params)
-		redirect_to dashboard_path
+		task = Task.find(params[:id].to_i)
+    task.update(task_params)
+		redirect_to project_groups_path({project_id: task.group.project.id})
 	end
 
 	def destroy
-    	Task.find(params[:id].to_i).destroy
-    	redirect_to dashboard_path
+    task = Task.find(params[:id].to_i).destroy
+    redirect_to project_groups_path({project_id: task.group.project.id})
   	end
 
   def toggle
   	task = Task.find(params[:id].to_i)
   	task.status = !task.status
   	task.save
-  	redirect_to dashboard_path
+  	redirect_to project_groups_path({project_id: task.group.project.id})
   end
 
 	private
