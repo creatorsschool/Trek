@@ -6,8 +6,9 @@
 
 <% if !@groups.empty? %> 
 
+ <div class="row">
+
 <% @groups.each do |group| %>
-  <div class="row">
     <div class="col s4">
       <div class="card medium"> 
         <div class="card-image waves-effect waves-block waves-light">
@@ -69,6 +70,6 @@
 
         </div> <!-- div card medium -->
       </div> <!-- div col s4 -->
-    </div> <!-- div row -->
   <% end %>
+</div> <!-- div row -->
 <% end %>
