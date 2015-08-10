@@ -26,22 +26,41 @@
 
 
 <div class="col s6 offset-s3">
-  <div>
-    <h3>Project List:</h3>
-    <div id="projects-list" class="collection list-projects">
+  <table class="bordered">
+  <div id="projects-list" class="collection list-projects">
+    <thead>
+      <tr>
+        <th>
+          <h3>Project List:</h3>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
       <% @projects.each do |project| %>
-      <%= link_to project_groups_path(project), class: 'collection-item' do %>
-      <%= project.name %>
-      <%= link_to project_path(project), method: :delete do %>
-      <i class= "material-icons right">delete</i>
+        <td>
+          <%= link_to project_groups_path(project), class: 'collection-item' do %>
+            <%= project.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to project_path(project) do %>
+            <button class="btn waves-effect waves-light">Details</button>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_project_path(project) do %>
+            <button class="btn waves-effect waves-light">Edit</button>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to project_path(project), method: :delete do %>
+            <button class="btn waves-effect waves-light">Delete</button>
+          <% end %>
+        </td>
       <% end %>
-      <%= link_to edit_project_path(project) do %>
-      <i class= "material-icons right">settings</i>
-      <% end %>
-      <% end %>
-      <% end %>
-    </div>
+    </tbody>
   </div>
+</table>
 </div>
 
 <div class="fixed-action-btn" style="bottom: 45px; right:24px;">
