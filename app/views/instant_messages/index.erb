@@ -24,7 +24,18 @@
           </div>
           <div class="messages">
             <p class="container-text-message"><%= m.text %></p>
-            <time datetime="<%= m.time%>">51 min</time>
+            <% if DateTime.now.strftime("%m/%Y") == m.time.strftime("%m/%Y") %>
+              <% if (DateTime.now.strftime("%d").to_i - m.time.strftime("%d").to_i) == 0 %>
+                <% m.time.strftime("%m").to_i.between?(5,10) ? m.time += 1.hour  : m.time %>
+                <time><%= m.time.strftime("%H:%M")%> min</time>
+              <% elsif (DateTime.now.strftime("%d").to_i - m.time.strftime("%d").to_i).abs.between?(1,6) %>
+                <time><%= m.time.strftime("%A, %H:%M")%> min</time>
+              <% else %>
+                <time><%= m.time.strftime("%d de %b, %H:%M")%> min</time>
+              <%end%>
+            <%else%>
+               <time><%= m.time.strftime("%d de %b, %H:%M")%> min</time>
+            <%end%> 
           </div>
         </li>
       <% else %>
@@ -34,7 +45,18 @@
           </div>
           <div class="messages">
             <p class="container-text-message"><%= m.text %></p>
-            <time datetime="<%= m.time%>"><%= @user_name_received.first_name%> • 51 min</time>
+             <% if DateTime.now.strftime("%m/%Y") == m.time.strftime("%m/%Y") %>
+              <% if (DateTime.now.strftime("%d").to_i - m.time.strftime("%d").to_i) == 0 %>
+                <% m.time.strftime("%m").to_i.between?(5,10) ? m.time += 1.hour  : m.time %>
+                <time><%= @user_name_received.first_name%> • <%= m.time.strftime("%H:%M")%> min</time>
+              <% elsif (DateTime.now.strftime("%d").to_i - m.time.strftime("%d").to_i).abs.between?(1,6) %>
+                <time><%= @user_name_received.first_name%> •<%= m.time.strftime("%A, %H:%M")%> min</time>
+              <% else %>
+                <time><%= @user_name_received.first_name%> •<%= m.time.strftime("%d de %b, %H:%M")%> min</time>
+              <%end%>
+            <%else%>
+               <time><%= @user_name_received.first_name%> •<%= m.time.strftime("%d de %b, %H:%M")%> min</time>
+            <%end%> 
           </div>
         </li>
       <% end %>
