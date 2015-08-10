@@ -5,6 +5,5 @@ class DashboardController < ApplicationController
     @groups = Group.all
     @tasks = Task.all
     @project = Project.new
-    @list_groups = current_user.groups.all
   end
 end
