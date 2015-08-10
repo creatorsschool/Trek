@@ -46,9 +46,9 @@
 
 <div class="fixed-action-btn" style="bottom: 45px; right:24px;">
   <a class="btn-floating btn-large red">
-    <i class="material-icons">chat_bubble_outline</i>
+    <i class="material-icons">chat</i>
   </a>
-  <ul class="list-users">
+  <ul>
     <% unless @list_groups.empty? %>
       <% @list_groups.each do |group| %>
         <% group.users.all.each do |user| %>
@@ -64,5 +64,8 @@
     <% end %>
   </ul>
 </div>
+
+
+
 
 <%= render "/projects/new" %>
