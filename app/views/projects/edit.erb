@@ -1,18 +1,18 @@
-<h1>Edit Project</h1>
-
-<%= form_for @project do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-
-  <p>
-  <%= f.submit %>
-  </p>
-
-<% end %>
+<div class="col s4">
+  <div class="edit-project-container">
+    <div class="name-edit-project-container">
+      <h5>Edit project</h5>
+    </div>
+    <div class="col s12">
+      <div class="row">
+        <%= form_for @project do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "validate" %>
+        <%= f.label :description %>
+        <%= f.text_field :description, class: "validate" %>
+        <button class="btn waves-effect waves-light" type="submit"><% f.submit %>edit project</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
