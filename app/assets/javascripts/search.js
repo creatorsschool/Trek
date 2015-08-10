@@ -7,11 +7,11 @@ $(document).ready(function(){
       });
 	});
 
-	$('html').on('click', function(e) {
-		if ($.contains(!$('#searchInput'), e.target)) {
-			$('#searchInput').slideUp();
-		}
-	});
+	// $('html').on('click', function(e) {
+	// 	if (!$.contains($('#searchInput'), e.target)) {
+	// 		$('#searchInput').slideUp();
+	// 	}
+	// });
 
   $('#searchInput input').on('keyup', function(event) {
     event.preventDefault();
