@@ -1,9 +1,16 @@
-<h1>Project Show</h1>
-
-<div>
-  Name:<br>
-  <%= @project.name %><br>
-  Description:<br>
-  <%= @project.description %><br>
-
+<div class="col s4">
+	<div class="show-project-container">
+		<div class="name-show-project-container">
+			<h5>Project Show</h5>
+		</div>
+		<div class="col s12">
+			<div class="row">
+				<h5>Name</h5>
+				<%= @project.name %>
+				<h5>Description</h5>
+				<%= @project.description %>
+			</div>
+		</div>
+	</div>
 </div>
+
