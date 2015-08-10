@@ -1,18 +1,31 @@
-<h1>New Project</h1>
+<div class="modal" id="modal-add-project">
+  <div class="modal-content">
+    <div class="body-panel">
+      <%= form_for @project do |f| %>
 
-<%= form_for @project do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </p>
-
-  <p>
-  <%= f.submit %>
-  </p>
-
-<% end %>
+      <div class="body-panel-header">
+        Create Project
+      </div>
+      <div class="body-panel-body">
+        <div class="row">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <%= f.text_area :description, class: 'materialize-textarea' %>
+            <%= f.label :description %>
+          </div>
+        </div>
+      </div>
+      <div class="body-panel-footer">
+        <%= link_to "#" , class: "btn waves-effect waves-light back-button modal-action modal-close" do %>
+        Back
+        <i class="material-icons left">replay</i>
+        <% end %>
+        <%= f.button 'CREATE PROJECT' , class: 'btn waves-effect waves-light' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
