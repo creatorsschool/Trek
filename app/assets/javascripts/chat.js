@@ -1,7 +1,6 @@
 $(document).ready(function(){
-
   $('#users-list li').on('click', function(event) {
-    event.preventDefault();  
+    event.preventDefault();
 
     $.ajax("/search?search=" + input, {
       success: function(data) {
@@ -13,7 +12,6 @@ $(document).ready(function(){
       }
     });
   });
-
 
   $('.panel-heading').on('dblclick', toggleChat);
   $('.panel-heading span.icon_minim').on('click', toggleChat);
