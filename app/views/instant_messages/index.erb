@@ -1,50 +1,58 @@
-<section class='chat-container'>
-  <header class="header">
-    <div class="header-left">
-      <span>
-        <i class="material-icons">insert_chart</i>
-        <%= @user_name_received.first_name %> <%= @user_name_received.last_name %>
-      </span>
-    </div>
-    <div class="header-right">
-      <button class="minimize" type="button">
-        <i class="small material-icons">add</i>
-      </button>
-      <button class="close-chat" type="button">
-        <i class="small material-icons">close</i>
-      </button>
-    </div>
-  </header>
-    <ol class="discussion">
+<div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:10px;">
+  <div class="col-xs-12 col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading top-bar panel-heading-open">
+        <div class="col-md-8 col-xs-8">
+          <h3 class="panel-title">
+            <span class="glyphicon glyphicon-comment"></span>
+            <%= @user_name_received.first_name %> <%= @user_name_received.last_name %>
+          </h3>
+        </div>
+        <div class="col-md-4 col-xs-4" style="text-align: right;">
+          <a href="#">
+            <span class="glyphicon glyphicon-minus icon_minim" id="minim_chat_window"></span>
+          </a>
+          <a href="#">
+            <span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span>
+          </a>
+        </div>
+      </div>
+      <div class="panel-body msg_container_base">
       <% @messages.each do |m| %>
-      <% if m.user_id_sent == current_user.id %>
-        <li class="user">
-          <div class="img_current-user">
-            <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
+        <% if m.user_id_sent == current_user.id %>
+          <div class="row msg_container base_sent">
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_sent">
+                <p><%= m.text %></p>
+                <time datetime="2009-11-13T20:00"><%= current_user.first_name%> • <%= m.str_time %> min</time>
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-2 avatar">
+              <img class=" img-responsive " src="https://a2.muscache.com/defaults/user_pic-50x50.png?v=2">
+            </div>
           </div>
-          <div class="messages">
-            <p class="container-text-message"><%= m.text %></p>
-            <time><%= m.str_time %></time>
+          <% else %>
+          <div class="row msg_container base_receive">
+            <div class="col-md-2 col-xs-2 avatar">
+              <img class=" img-responsive " src="https://a2.muscache.com/defaults/user_pic-50x50.png?v=2">
+            </div>
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_receive">
+                <p><%= m.text %></p>
+                <time datetime="2009-11-13T20:00"><%= @user_name_received.first_name%> • <%= m.str_time %> min</time>
+              </div>
+            </div>
           </div>
-        </li>
-      <% else %>
-        <li class="user">
-          <div class="img_user-received">
-            <img src="http://static.minilua.com/wp-content/uploads/2011/09/cachorrinho-fofo_large_thumb.jpg" style="widht:30px; height:30px;" />
-          </div>
-          <div class="messages">
-            <p class="container-text-message"><%= m.text %></p>
-            <time><%= @user_name_received.first_name%> • <%= m.str_time %></time 
-          </div>
-        </li>
-      <% end %>
-    <%end%>
-    <div class="container-form" style="border:2px solid blue; position:fixed; background-color:white; width:20em; height:5em;">
-    <%= form_for :instant_message, url: user_instant_messages_path({user_id: @user_id_received}), method: :post do |f| %>
-      <p>
-        <%= f.text_field :text, placeholder: 'send one mensage' %>
-      </p>
-    <% end %>
+        <% end %>
+      <%end%>
+      </div>
+      <div class="panel-footer">
+        <div class="input-group">
+          <%= form_for :instant_message, url: user_instant_messages_path({user_id: @user_id_received}), method: :post do |f| %>
+            <%= f.text_field :text, class:'form-control input-sm chat_input', id:'btn-input', placeholder: 'Send a message' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-    </ol>
-</section>
+</div>

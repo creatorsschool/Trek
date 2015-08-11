@@ -4,50 +4,88 @@
   </button>
 </div><br>
 
-<% if !@groups.empty? %> 
+<% if !@groups.empty? %>
 
- <div class="row">
-
-<% @groups.each do |group| %>
-    <div class="col s4">
-      <div class="card medium"> 
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="<%= group.banner.url %>">
-        </div>
+<div class="row">
+  <% @groups.each do |group| %>
+  <div class="col s4">
+    <div class="card medium">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="http://portfoliotheme.org/enigmatic/wp-content/uploads/sites/9/2012/07/placeholder1.jpg">
+      </div>
 <!-- ***********CARD CONTENT********* -->
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">
-              <%= link_to group.name, project_group_path(@project, group.id) %>
-              <% if !group.tasks.empty? %>
-                <i class="material-icons right">list</i>
-              <% end %>
-            </span>
-
-            <div class="newTask">
-              <%= link_to new_task_path(group_id: group.id) do %>
-                <button class="btn waves-effect waves-light">New Task</button>
-              <% end %>
-              
-              <%= link_to edit_project_group_path(@project, group) do %>
-                <button class="btn waves-effect waves-light">Edit</button>
-              <% end %>
-
-              <%= link_to project_group_path(@project, group), :method => :delete do %>
-                <button class="btn waves-effect waves-light">  
-                  <i class="material-icons">delete</i>
-                </button>
-              <% end %>
-            </div>
-          </div>
-<!-- ***********CARD CONTENT TASK'S********* -->
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">
+          <%= link_to group.name, project_group_path(@project, group.id) %>
           <% if !group.tasks.empty? %>
-            <div id="tasks-editor" class="card-reveal">
-              <%= render "/groups/group_tasks", group: group %>
-            </div>
+          <i class="material-icons right">list</i>
+          <% end %>
+        </span>
+
+        <div class="newTask">
+          <%= link_to new_task_path(group_id: group.id) do %>
+          <button class="btn waves-effect waves-light">New Task</button>
+          <% end %>
+          <%= link_to edit_project_group_path(@project, group) do %>
+          <button class="btn waves-effect waves-light">Edit</button>
           <% end %>
 
-        </div> <!-- div card medium -->
-      </div> <!-- div col s4 -->
-    <% end %>
-  </div> <!-- div row -->
+          <%= link_to project_group_path(@project, group), :method => :delete do %>
+          <button class="btn waves-effect waves-light">
+            <i class="material-icons">delete</i>
+          </button>
+          <% end %>
+        </div>
+      </div>
+<!-- ***********CARD CONTENT TASK'S********* -->
+      <% if !group.tasks.empty? %>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Task's
+          <i class="material-icons right">close</i>
+        </span>
+        <p>
+          <div class="listTask">
+            <table>
+              <% group.tasks.each do |task| %>
+              <tbody>
+                <tr>
+                  <td><%= task.field %></td>
+                  <td><%= task.status %></td>
+                  <td><%= link_to 'Toggle', toggle_task_path(task), method: :put %></td>
+                  <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                  <td><%= link_to 'Destroy', task_path(task), method: :delete %></td>
+                </tr>
+              </tbody>
+              <% end %>
+            </table>
+          </div>
+        </p>
+      </div>
+      <% end %>
+    </div>
+<!-- div card medium -->
+  </div>
+<!-- div col s4 -->
+  <% end %>
+</div>
+<!-- div row -->
 <% end %>
+
+<div class="fixed-action-btn" style="bottom: 45px; right:24px;">
+  <a class="btn-floating btn-large red">
+    <i class="material-icons">chat</i>
+  </a>
+  <ul>
+    <% unless @users.empty? %>
+    <% @users.each do |user| %>
+    <li>
+      <% if user.first_name.downcase != current_user.first_name.downcase %>
+      <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
+        <i class="name_user"><%= user.first_name %></i>
+      </a>
+      <% end %>
+    </li>
+    <%end%>
+    <% end %>
+  </ul>
+</div>

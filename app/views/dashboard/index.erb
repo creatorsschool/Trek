@@ -59,26 +59,6 @@
 </div>
 </div>
 
-
-<div class="fixed-action-btn" style="bottom: 45px; right:24px;">
-  <a class="btn-floating btn-large red">
-    <i class="material-icons">chat</i>
-  </a>
-  <ul class="list-users">
-    <% unless @users.empty? %>
-    <% @users.each do |user| %>
-    <li>
-      <% if user.first_name.downcase != current_user.first_name.downcase %>
-      <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
-        <i class="name_user"><%= user.first_name %></i>
-      </a>
-      <% end %>
-    </li>
-    <%end%>
-    <% end %>
-  </ul>
-</div>
-
 <%= render "dashboard/chat" %>
 
 

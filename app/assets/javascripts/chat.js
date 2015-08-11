@@ -10,18 +10,19 @@ $(document).ready(function(){
       $this = $this.find('span.icon_minim');
 
     if (!$this.hasClass('panel-collapsed')) {
-      $this.parents('.panel').find('.panel-body').hide();
+      $this.parents('.panel').find('.panel-body').slideUp('fast');
       $this.parents('.panel').find('.panel-footer').hide();
+      $this.parents('.panel').find('.panel-heading').removeClass('panel-heading-open');
       $this.addClass('panel-collapsed');
       $this.removeClass('glyphicon-minus').addClass('glyphicon-plus');
     } else {
-      $this.parents('.panel').find('.panel-body').show();
+      $this.parents('.panel').find('.panel-heading').addClass('panel-heading-open');
+      $this.parents('.panel').find('.panel-body').slideDown('fast');
       $this.parents('.panel').find('.panel-footer').show();
       $this.removeClass('panel-collapsed');
       $this.removeClass('glyphicon-plus').addClass('glyphicon-minus');
     }
   }
-
   $('.panel-footer input.chat_input').on('focus', function(e) {
     var $this = $(this);
     if ($('#minim_chat_window').hasClass('panel-collapsed')) {
