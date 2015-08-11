@@ -6,4 +6,5 @@ class DashboardController < ApplicationController
     @tasks = Task.all
     @project = Project.new
   end
+
 end
