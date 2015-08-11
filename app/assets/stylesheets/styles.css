@@ -570,3 +570,28 @@ header span.user-name {
   border-top: 1px solid #dce0e0;
   width: 100%;
 }
+
+.name-create-group-container{
+  background-color: #ee6e73;
+  color: #ffffff;
+  font-size: 18px;
+  border-bottom: 1px solid #e53935;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #dce0e0;
+  width: 100%;
+}
+
+.create-group-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  transition: box-shadow .25s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  width: 100%;
+}

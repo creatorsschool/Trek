@@ -1,11 +1,21 @@
-<div class="form-create_groups">
-	<h3>Create new group</h3>
-	<%= form_for [@project, @group] do |f| %>
-	<%= f.label :name %>:
-	<%= f.text_field :name %><br />
-	<%= f.label :description %>:
-	<%= f.text_field :description %><br />
-	<%= f.collection_check_boxes(:user_ids, User.all, :id, :first_name) %>
-	<%= f.submit %>
-	<% end %>
+<div class="col s4">
+	<div class="edit-group-container">
+		<div class="name-create-group-container">
+			<h5>Create new group</h5>
+		</div>
+		<div class="create-group-container">
+		<div class="col s12">
+				<div class="row">
+					<%= form_for [@project, @group] do |f| %>
+					<%= f.label :name %>
+					<%= f.text_field :name, class: "validate" %>
+					<%= f.label :description %>
+					<%= f.text_field :description, class: "validate" %>
+					<%# f.collection_check_boxes(:user_ids, User.all, :id, :first_name) %>
+					<button class="btn waves-effect waves-light" type="submit"><% f.submit %>Create</button>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
