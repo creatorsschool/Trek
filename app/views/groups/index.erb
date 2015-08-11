@@ -1,8 +1,8 @@
-<div class="new_group">
+<div class="new_group"><br>
   <button>
     <%= link_to 'New group', new_project_group_path(@project), class: "waves-effect waves-light btn" %>
   </button>
-</div>
+</div><br>
 
 <% if !@groups.empty? %> 
 
@@ -12,7 +12,7 @@
     <div class="col s4">
       <div class="card medium"> 
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="http://portfoliotheme.org/enigmatic/wp-content/uploads/sites/9/2012/07/placeholder1.jpg">
+          <img class="activator" src="<%= group.banner.url %>">
         </div>
 <!-- ***********CARD CONTENT********* -->
           <div class="card-content">
