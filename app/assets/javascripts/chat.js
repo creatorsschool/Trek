@@ -1,5 +1,20 @@
 $(document).ready(function(){
 
+  $('#users-list li').on('click', function(event) {
+    event.preventDefault();  
+
+    $.ajax("/search?search=" + input, {
+      success: function(data) {
+        $('#projects-list').html('');
+
+        data.forEach(function(project) {
+          $('#projects-list').append('<a class="collection-item">' + project.name + '</a>')
+        });
+      }
+    });
+  });
+
+
   $('.panel-heading').on('dblclick', toggleChat);
   $('.panel-heading span.icon_minim').on('click', toggleChat);
 
