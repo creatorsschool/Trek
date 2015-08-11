@@ -9,7 +9,7 @@ class InstantMessage < ActiveRecord::Base
 		#verifica se esta no mesmo dia
 		return self.time.strftime("%H:%M") if DateTime.now.strftime("%d/%m/%Y") == self.time.strftime("%d/%m/%Y")
 		#verifica se esta na mesmo semana 
-		return self.time.strftime("%A, %H:%M") if self.time.between?(self.time.at_beginning_of_week,self.time.at_end_of_week) 
+		return self.time.strftime("%a, %H:%M") if self.time.between?(self.time.at_beginning_of_week,self.time.at_end_of_week) 
 		# se nenhuma das condicoes se verificar
 		return self.time.strftime("%d de %b, %H:%M")
 	end
