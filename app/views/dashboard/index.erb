@@ -25,46 +25,38 @@
 </div>
 
 
-<div class="row">
-  <div class="container"
-    <div class="col s3">
-      <table class="bordered">
-        <div id="projects-list" class="collection list-projects">
-          <thead>
-            <tr>
-              <th>
-                <h3>Project List:</h3>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @projects.each do |project| %>
-              <td>
-                <%= link_to project_groups_path(project), class: 'collection-item' do %>
-                  <%= project.name %>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to project_path(project) do %>
-                  <button class="btn waves-effect waves-light">Details</button>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to edit_project_path(project) do %>
-                  <button class="btn waves-effect waves-light">Edit</button>
-                <% end %>
-              </td>
-              <td>
-                <%= link_to project_path(project), method: :delete do %>
-                  <button class="btn waves-effect waves-light">Delete</button>
-                <% end %>
-              </td>
-            <% end %>
-          </tbody>
-        </div>
-      </table>
+<div class="col s4">
+  <div class="show-project-container">
+    <div class="name-project-container">
+      <h5>Projects List</h5>
     </div>
+    <div class="list-projects-container">
+      <% @projects.each do |project| %>
+      <div class="row">
+       <div class="s12">
+        <%= link_to project_groups_path(project), class: 'collection-item' do %>
+        <div class="col s6">
+          <div class="project-name">
+            <%= project.name %>
+          </div>
+        </div>
+        <% end %>
+        <div class="project-index-buttons">
+          <%= link_to project_path(project) do %>
+          <button class="btn waves-effect waves-light">Details</button>
+          <% end %>
+          <%= link_to edit_project_path(project) do %>
+          <button class="btn waves-effect waves-light">Edit</button>
+          <% end %>
+          <%= link_to project_path(project), method: :delete do %>
+          <button class="btn waves-effect waves-light">Delete</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
+</div>
 </div>
 
 
@@ -74,15 +66,15 @@
   </a>
   <ul class="list-users">
     <% unless @users.empty? %>
-      <% @users.each do |user| %>
-            <li>
-              <% if user.first_name.downcase != current_user.first_name.downcase %>
-                  <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
-                      <i class="name_user"><%= user.first_name %></i>
-                  </a>
-              <% end %>
-            </li>
-      <%end%>
+    <% @users.each do |user| %>
+    <li>
+      <% if user.first_name.downcase != current_user.first_name.downcase %>
+      <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
+        <i class="name_user"><%= user.first_name %></i>
+      </a>
+      <% end %>
+    </li>
+    <%end%>
     <% end %>
   </ul>
 </div>
