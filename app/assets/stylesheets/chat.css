@@ -165,7 +165,10 @@ img {
 
 .panel-footer .input-group {
   display: flex;
+}
 
+.panel-footer .input-group form {
+  flex-grow: 1;
 }
 
 .panel-footer .input-group input[type=text] {
