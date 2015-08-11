@@ -33,6 +33,6 @@ class UsersController < Clearance::UsersController
   private
 
   def update_user
-    params.require(:user).permit(:first_name, :last_name, :email , :password)
+    params.require(:user).permit(:first_name, :last_name, :email , :password, :avatar)
   end
 end

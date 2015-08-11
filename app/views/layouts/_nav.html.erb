@@ -7,7 +7,7 @@
           <li>
             <a class="dropdown-button" data-activates="dropdown1" href="#!">
               <div class="media-round user-profile-image">
-                <img src="https://a2.muscache.com/defaults/user_pic-50x50.png?v=2" alt="">
+                <img src="<%= current_user.avatar.url %>" alt="">
               </div>
               <% if signed_in? %>
               <span class="user-name"><%= current_user.first_name %></span>
