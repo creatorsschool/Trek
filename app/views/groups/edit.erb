@@ -1,16 +1,18 @@
 <div class="col s4">
 	<div class="edit-group-container">
 		<div class="name-edit-group-container">
-			<h5>Edit group</h5>
+			<h5>Edit Group</h5>
 		</div>
 		<div class="col s12">
 			<div class="row">
 				<%= form_for [@project, @group] do |f| %>
-				<%= f.label :name %>
-				<%= f.text_field :name, class: "validate" %>
-				<%= f.label :description %>
-				<%= f.text_field :description, class: "validate" %>
-				<button class="btn waves-effect waves-light" type="submit"><% f.submit %>update</button>
+					<%= f.label :name %>
+					<%= f.text_field :name, class: "validate" %>
+					<%= f.label :description %>
+					<%= f.text_field :description, class: "validate" %>
+					Group Image:
+					<%= f.file_field :banner %>
+					<button class="btn waves-effect waves-light" type="submit"><% f.submit %>Update</button>
 				<% end %>
 			</div>
 		</div>

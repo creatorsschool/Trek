@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807164251) do
+ActiveRecord::Schema.define(version: 20150811145949) do
 
   create_table "groups", force: :cascade do |t|
     t.string  "name"
     t.string  "description"
     t.integer "project_id"
+    t.string  "banner"
   end
 
   create_table "instant_messages", force: :cascade do |t|
