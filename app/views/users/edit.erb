@@ -59,12 +59,15 @@
       <i class="material-icons left">replay</i>
       <% end %>
       <%= f.button 'SAVE', class: 'btn waves-effect waves-light' %>
+      <%= link_to user_path(@user.id), method: :delete, class: "btn waves-effect waves-light cancel-account-button" do %>
+        Cancel Account
+      <% end %>
     </div>
     <% end %>
   </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="user-panel">
     <div class="user-panel-header">
       Cancel Account
@@ -73,4 +76,4 @@
       <button class="btn waves-effect waves-light cancel-account-button" type="submit">Cancel Account</button>
     </div>
   </div>
-</div>
+</div> -->

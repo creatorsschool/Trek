@@ -14,7 +14,7 @@ class UsersController < Clearance::UsersController
   end
   def destroy
     User.destroy(params[:id])
-    redirect_to sign_path
+    redirect_to sign_in_path
   end
   def user_from_params
     first_name = user_params.delete(:first_name)
