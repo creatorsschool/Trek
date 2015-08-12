@@ -58,10 +58,10 @@
       Back
       <i class="material-icons left">replay</i>
       <% end %>
-      <%= f.button 'SAVE', class: 'btn waves-effect waves-light' %>
       <%= link_to user_path(@user.id), method: :delete, class: "btn waves-effect waves-light cancel-account-button" do %>
-        Cancel Account
+        Delete
       <% end %>
+      <%= f.button 'SAVE', class: 'btn waves-effect waves-light' %>
     </div>
     <% end %>
   </div>
