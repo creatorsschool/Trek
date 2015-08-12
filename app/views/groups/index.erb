@@ -39,27 +39,8 @@
       </div>
 <!-- ***********CARD CONTENT TASK'S********* -->
       <% if !group.tasks.empty? %>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Task's
-          <i class="material-icons right">close</i>
-        </span>
-        <p>
-          <div class="listTask">
-            <table>
-              <% group.tasks.each do |task| %>
-              <tbody>
-                <tr>
-                  <td><%= task.field %></td>
-                  <td><%= task.status %></td>
-                  <td><%= link_to 'Toggle', toggle_task_path(task), method: :put %></td>
-                  <td><%= link_to 'Edit', edit_task_path(task) %></td>
-                  <td><%= link_to 'Destroy', task_path(task), method: :delete %></td>
-                </tr>
-              </tbody>
-              <% end %>
-            </table>
-          </div>
-        </p>
+        <div id="tasks-editor" class="card-reveal">
+           <%= render "/groups/group_tasks", group: group %>
       </div>
       <% end %>
     </div>
