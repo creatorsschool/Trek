@@ -8,11 +8,13 @@
       </div>
       <div class="body-panel-body">
         <div class="row">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
+          <div class="input-field col s12">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
         </div>
         <div class="row">
-          <div class="input-field">
+          <div class="input-field col s12">
             <%= f.text_area :description, class: 'materialize-textarea' %>
             <%= f.label :description %>
           </div>
