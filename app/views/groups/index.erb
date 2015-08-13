@@ -61,9 +61,9 @@
     <% @users.each do |user| %>
     <li>
       <% if user.first_name.downcase != current_user.first_name.downcase %>
-      <a href="<%= user_instant_messages_path({user_id: user.id}) %>" class="btn-floating" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;">
-        <i class="name_user"><%= user.first_name %></i>
-      </a>
+        <%= link_to user_instant_messages_path({user_id: user.id}), remote: true, class: "btn-floating", style: "transform: scaleY(0.4) scaleX(0.4) translateY(40px); opacity: 0;"  do %>
+          <i class="name_user"><%= user.first_name %></i>
+        <% end %>
       <% end %>
     </li>
     <%end%>

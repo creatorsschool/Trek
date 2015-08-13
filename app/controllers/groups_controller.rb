@@ -35,7 +35,7 @@ class GroupsController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @groups = @project.groups
-    @users = User.all 
+    @users = User.all
   end
 
   private
