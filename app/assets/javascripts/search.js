@@ -23,7 +23,7 @@ $(document).ready(function(){
         $('#projects-list').html('');
 
         data.forEach(function(project) {
-          $('#projects-list').append('<a class="collection-item">' + project.name + '</a>')
+          $('#projects-list').append('<a class="collection-item">' + project.name + '</a>');
         });
       }
     });
