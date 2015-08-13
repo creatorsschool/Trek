@@ -28,3 +28,8 @@ gem 'pry-rails', :group => :development
 gem "letter_opener", :group => :development
 
 gem 'carrierwave'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
