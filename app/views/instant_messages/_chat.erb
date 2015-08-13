@@ -23,7 +23,7 @@
           <div class="col-md-10 col-xs-10">
             <div class="messages msg_sent">
               <p><%= m.text %></p>
-              <time datetime="2009-11-13T20:00"><%= current_user.first_name%> • <%= m.str_time %></time>
+              <time><%= current_user.first_name%> • <%= m.str_time %></time>
             </div>
           </div>
           <div class="col-md-2 col-xs-2 avatar">
@@ -38,7 +38,7 @@
           <div class="col-md-10 col-xs-10">
             <div class="messages msg_receive">
               <p><%= m.text %></p>
-              <time datetime="2009-11-13T20:00"><%= user_received.first_name%> • <%= m.str_time %></time>
+              <time><%= user_received.first_name%> • <%= m.str_time %></time>
             </div>
           </div>
         </div>
