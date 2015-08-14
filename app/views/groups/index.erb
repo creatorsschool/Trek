@@ -39,7 +39,7 @@
       </div>
 <!-- ***********CARD CONTENT TASK'S********* -->
       <% if !group.tasks.empty? %>
-        <div id="tasks-editor" class="card-reveal">
+        <div id="tasks-editor-<%= group.id %>" class="card-reveal">
            <%= render "/groups/group_tasks", group: group %>
       </div>
       <% end %>
