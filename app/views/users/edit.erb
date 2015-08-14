@@ -9,7 +9,7 @@
         <div class="col s6">
           <div class="profile-background-container">
             <div class="media-photo profile-picture">
-              <img src="<%= @user.avatar.url %>">
+                <img src="<%= @user.avatar.url %>">
             </div>
             <div class="media-photo media-round">
               <img src="<%= @user.avatar.url %>">
@@ -19,13 +19,13 @@
         <div class="col s6">
           <div class="col s12">
             <div class="row">
-              <div class="col s12">
+              <div class="input-field col s12">
                 <%= f.label :first_name %>
                 <%= f.text_field :first_name, class: "validate" %>
               </div>
             </div>
             <div class="row">
-              <div class="col s12">
+              <div class="input-field col s12">
                 <%= f.label :last_name %>
                 <%= f.text_field :last_name, class: "validate" %>
               </div>
@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col s12">
+              <div class="input-field col s12">
                 <%= f.label :password %>
                 <%= f.password_field :password, class: "validate"%>
               </div>
@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col s4">
           <div class="button-upload">
-          <%= f.file_field :avatar %>
+          <%= f.file_field :avatar, title: "Upload Profile Picture" %>
           </div>
         </div>
       </div>
@@ -58,22 +58,21 @@
       Back
       <i class="material-icons left">replay</i>
       <% end %>
-      <%= link_to user_path(@user.id), method: :delete, class: "btn waves-effect waves-light cancel-account-button" do %>
-        Delete
-      <% end %>
       <%= f.button 'SAVE', class: 'btn waves-effect waves-light' %>
     </div>
     <% end %>
   </div>
 </div>
 
-<!-- <div class="container">
+<div class="container">
   <div class="user-panel">
     <div class="user-panel-header">
       Cancel Account
     </div>
     <div class="user-panel-body">
-      <button class="btn waves-effect waves-light cancel-account-button" type="submit">Cancel Account</button>
+      <%= link_to user_path(@user.id), method: :delete, class: "btn waves-effect waves-light cancel-account-button" do %>
+        Delete
+      <% end %>
     </div>
   </div>
-</div> -->
+</div>
