@@ -5,9 +5,9 @@ class InstantMessage < ActiveRecord::Base
 
 	def str_time
 		#verifica se esta no fuso horario de verao
-		if self.time.between?(DateTime.new(2015,05,29), DateTime.new(2015,10,25)) 
-			self.time += 1.hour
-		end 
+		# if self.time.between?(DateTime.new(2015,05,29), DateTime.new(2015,10,25)) 
+		# 	self.time += 1.hour
+		# end 
 
 		#verifica se esta no mesmo dia
 		if DateTime.now.strftime("%d/%m/%Y") == self.time.strftime("%d/%m/%Y")
@@ -16,7 +16,7 @@ class InstantMessage < ActiveRecord::Base
 			dif_minutes = ((hours_message - hours_now)*60).abs
 			if dif_minutes < 1 
 				return "now"
-			elsif dif_minutes.between?(1,60)
+			elsif dif_minutes.between?(1,59)
 				return "#{dif_minutes.round} min"
 			else
 				return self.time.strftime("%H:%M")
