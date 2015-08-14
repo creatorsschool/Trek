@@ -33,6 +33,7 @@ class GroupsController < ApplicationController
   end
 
   def index
+    @projects = Project.all
     @project = Project.find(params[:project_id])
     @groups = @project.groups
     @users = User.all

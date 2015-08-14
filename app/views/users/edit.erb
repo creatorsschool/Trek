@@ -9,7 +9,7 @@
         <div class="col s6">
           <div class="profile-background-container">
             <div class="media-photo profile-picture">
-              <img src="<%= @user.avatar.url %>">
+                <img src="<%= @user.avatar.url %>">
             </div>
             <div class="media-photo media-round">
               <img src="<%= @user.avatar.url %>">
@@ -48,7 +48,7 @@
       <div class="row">
         <div class="col s4">
           <div class="button-upload">
-          <%= f.file_field :avatar %>
+          <%= f.file_field :avatar, title: "Upload Profile Picture" %>
           </div>
         </div>
       </div>

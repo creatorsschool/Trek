@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	$('#searchButton').on('click', function(event) {
 		event.preventDefault
-		$('#searchInput').slideToggle();
+		$('#searchInput').show();
+		$('#search-results').show();
       $( "#searchButton" ).click(function() {
       $( "#icon_prefix" ).focus();
       });
@@ -23,7 +24,18 @@ $(document).ready(function(){
         $('#projects-list').html('');
 
         data.forEach(function(project) {
-          $('#projects-list').append('<a class="collection-item">' + project.name + '</a>');
+					$('#projects-list').append(
+						'<li class="list-project">' +
+              '<div class="media-round user-project-image">' +
+                '<img src="' + project.avatar + '" alt="">' +
+              '</div>' +
+              //<%= link_to project_groups_path(project), class: 'collection-item' do %>
+                '<div class="project-name">' + project.name + '</div>' +
+              //<% end %>
+              '<div class="project-owner">by<b>' + project.username + '</b></div>' +
+              '<div class="project-description">' + project.description + '</div>' +
+            '</li>'
+					);
         });
       }
     });

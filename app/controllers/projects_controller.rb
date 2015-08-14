@@ -32,8 +32,9 @@ class ProjectsController < ApplicationController
     if !params[:search].blank?
       @projects = Project.where('name LIKE ?', "%#{params[:search]}%")
     else
-      @projects = []
+      @projects = Project.all
     end
-    render json: @projects
+
+    render json: @projects.map {|project| project.attributes.merge(avatar: current_user.avatar.url, username: current_user.first_name)}
   end
 end
