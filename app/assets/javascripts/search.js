@@ -29,9 +29,7 @@ $(document).ready(function(){
               '<div class="media-round user-project-image">' +
                 '<img src="' + project.avatar + '" alt="">' +
               '</div>' +
-              //<%= link_to project_groups_path(project), class: 'collection-item' do %>
-                '<div class="project-name">' + project.name + '</div>' +
-              //<% end %>
+              '<div class="project-name">' + project.name + '</div>' +
               '<div class="project-owner">by<b>' + project.username + '</b></div>' +
               '<div class="project-description">' + project.description + '</div>' +
             '</li>'
