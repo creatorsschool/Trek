@@ -23,21 +23,7 @@
   <div class="container">
     <div class="list-results">
       <div class="column-centered">
-        <ul id="projects-list" class="list-view project-search-results">
-            <% @projects.each do |project| %>
-              <li class="list-project">
-                <div class="media-round user-project-image">
-                  <img src="<%= current_user.avatar.url %>" alt="">
-                </div>
-
-                <%= link_to project_groups_path(project), class: 'collection-item' do %>
-                  <div class="project-name"><%= project.name %></div>
-                <% end %>
-                <div class="project-owner">by<b><%= current_user.first_name %></b></div>
-                <div class="project-description"><%= project.description %></div>
-              </li>
-            <% end %>
-        </ul>
+        <ul id="projects-list" class="list-view project-search-results"></ul>
       </div>
     </div>
   </div>
