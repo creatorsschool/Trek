@@ -16,6 +16,7 @@ class InstantMessagesController < ApplicationController
 				time: DateTime.now
 				})
 			if message.save
+				puts message.text
 				redirect_to user_instant_messages_path
 			else
 				flash[:error] = "Action failed"
